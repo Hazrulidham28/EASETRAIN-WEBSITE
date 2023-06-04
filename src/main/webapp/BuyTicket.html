@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Ticket</title>
+    <link rel="stylesheet" href="BuyTicket.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">TrainEase</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Service</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <form id="buyticket">
+            <h3 class="bookingtext" id="bookingtext">Booking Details</h3>
+            
+            <p class="from">From</p>
+            <select name="selectorigin" id="origin">
+                <option value="#">Select origin</option>
+                <option value="klsentral">KL SENTRAL</option>
+                <option value="tapah">TAPAH</option>
+                <option value="padangbesar">PADANG BESAR</option>
+            </select>
+            
+            
+            <p class="to">To</p>
+            <select name="selectdestination" id="destination">
+                <option value="#">Select destination</option>
+                <option value="padangbesar">PADANG BESAR</option>
+                <option value="tapah">TAPAH</option>
+                <option value="klsentral">KL SENTRAL</option>
+            </select>
+
+            <p class="dpdate">Departure Date</p>
+            <label for="departdate"></label>
+            <input type="date" id="departdate" name="departdate">
+            
+            <div class="type">
+                <input type="radio" id="typetrip" name="typetrip" value="oneway">
+                <label for="oneway">One-Way Trip</label>
+                <input type="radio" id="typetrip" name="typetrip" value="roundtrip">
+                <label for="roundtrip">Round Trip</label>
+            </div>
+            
+            <div class="button">
+                <button type="button" value="#">Proceed</button>
+            <button type="button" value="reset">Reset</button>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
