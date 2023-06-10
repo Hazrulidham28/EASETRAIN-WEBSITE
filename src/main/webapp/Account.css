@@ -1,0 +1,105 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Poppins',sans-serif;
+
+
+
+}
+.logo{
+    font-size: 2em;
+    color: white;
+    user-select: none;
+
+
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /*background-color: #4C3D3D;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    /*border-bottom: 1px solid #cececb;*/
+    backdrop-filter: blur(2px);
+
+    }
+ body {
+        
+       
+        min-height: 100vh;
+        background-color: #C07F00;
+        background:url('https://drive.google.com/uc?export=view&id=11w9e1lceHimEOlv7RFmjWKw2jUkun0JM') no-repeat;
+        background-size: cover;
+        background-position: center;
+
+
+    }
+    .navigation a{
+        position: relative;
+        font-size: 1.1em;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+
+    }
+
+    .navigation a::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: transform .5s;
+        transform-origin: right;
+
+
+    }
+    .navigation a:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    
+    .BigDiv{
+     color: white;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
+    margin-top: 20vh;
+    margin-left:10vw;
+    margin-right: 10vw;
+    min-height: 50vh;
+    min-width: 50vw;
+    background-color: black;
+    background:transparent;
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    
+    }
+    
+    .AccTitle{
+        padding-top: 3.5vh;
+    	border-width: 0px 0px 2px 0px;
+    	border-style: solid;
+    
+    }
+    
+    .accountDetailBox{
+    	display: inline-block;
+    	padding-top: 5vh;
+    	min-width: 25vw;
+    	min-height:20vh;
+    }
+    
+
