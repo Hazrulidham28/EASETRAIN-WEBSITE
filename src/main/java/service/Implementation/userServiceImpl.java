@@ -10,15 +10,29 @@ import java.util.List;
 import Bean.TrainException;
 import Bean.customerBean;
 import Constant.ResponseCode;
+import Constant.userRole;
 import Utility.DBUtil;
 import service.userService;
 
 public class userServiceImpl implements userService {
+	
+	private final String TABLE_NAME;
+
+	public userServiceImpl(userRole userRole) {
+		// TODO Auto-generated constructor stub
+		
+			if(userRole == null) {
+				userRole=userRole.CUSTOMER;
+				
+				
+			}
+			this.TABLE_NAME=userRole.toString();
+	}
 
 	@Override
 	public customerBean getUserByEmailId(String customerEmailId) throws TrainException {
 		customerBean customer = null;
-		String query = "SELECT * FROM CUSTOMER WHERE MAILID=?";
+		String query = "SELECT * FROM CUSTOMER WHERE Email=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -118,17 +132,18 @@ public class userServiceImpl implements userService {
 	@Override
 	public String registerUser(customerBean customer) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "INSERT INTO CUSTOMER VALUES(?,?,?,?,?,?)";
+		String query = "INSERT INTO customer VALUES(?,?,?,?,?)";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, customer.getUsername());
-			ps.setString(2, customer.getIcnum());
+			
+			ps.setString(1, customer.getIcnum());
+			ps.setString(2, customer.getUsername());
 			ps.setString(3, customer.getEmail());
-			ps.setNString(4, customer.getPhoneNum());
-			ps.setString(5, customer.getPass());
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			ps.setString(4,customer.getPhoneNum());
+			ps.setString(5,customer.getPass());
+			int i = ps.executeUpdate();
+			if (i>0) {
 				responseCode = ResponseCode.SUCCESS.toString();
 			}
 			ps.close();
