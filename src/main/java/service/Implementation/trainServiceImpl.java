@@ -61,7 +61,7 @@ public class trainServiceImpl implements trainService{
 	@Override
 	public String updateTrain(trainBean train) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE TRAIN SET TR_NAME=?, FROM_STN=?,TO_STN=?,SEATS=?,FARE=? WHERE TR_NO=?";
+		String query = "UPDATE TRAIN SET TrName=?, FromStn=?,ToStn=?,seats=?,fare=? WHERE TrNo=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -85,7 +85,7 @@ public class trainServiceImpl implements trainService{
 	@Override
 	public trainBean getTrainById(String trainNo) throws TrainException {
 		trainBean train = null;
-		String query = "SELECT * FROM TRAIN WHERE TR_NO=?";
+		String query = "SELECT * FROM TRAIN WHERE TrNo=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -94,10 +94,10 @@ public class trainServiceImpl implements trainService{
 			if (rs.next()) {
 				train = new trainBean();
 				train.setFare(rs.getDouble("fare"));
-				train.setFromStn(rs.getString("from_stn"));
-				train.setToStn(rs.getString("to_stn"));
-				train.setTrName(rs.getString("tr_name"));
-				train.setTrNo(rs.getString("tr_no"));
+				train.setFromStn(rs.getString("FromStn"));
+				train.setToStn(rs.getString("ToStn"));
+				train.setTrName(rs.getString("TrName"));
+				train.setTrNo(rs.getString("TrNo"));
 				train.setSeat(rs.getInt("seats"));
 			}
 			ps.close();
@@ -120,10 +120,10 @@ public class trainServiceImpl implements trainService{
 			while (rs.next()) {
 				trainBean train = new trainBean();
 				train.setFare(rs.getDouble("fare"));
-				train.setFromStn(rs.getString("from_stn"));
-				train.setToStn(rs.getString("to_stn"));
-				train.setTrName(rs.getString("tr_name"));
-				train.setTrNo(rs.getString("tr_no"));
+				train.setFromStn(rs.getString("FromStn"));
+				train.setToStn(rs.getString("ToStn"));
+				train.setTrName(rs.getString("Trname"));
+				train.setTrNo(rs.getString("TrNo"));
 				train.setSeat(rs.getInt("seats"));
 				trains.add(train);
 			}
@@ -151,10 +151,10 @@ public class trainServiceImpl implements trainService{
 			while (rs.next()) {
 				trainBean train = new trainBean();
 				train.setFare(rs.getDouble("fare"));
-				train.setFromStn(rs.getString("from_stn"));
-				train.setToStn(rs.getString("to_stn"));
-				train.setTrName(rs.getString("tr_name"));
-				train.setTrNo(rs.getString("tr_no"));
+				train.setFromStn(rs.getString("FromStn"));
+				train.setToStn(rs.getString("ToStn"));
+				train.setTrName(rs.getString("TrName"));
+				train.setTrNo(rs.getString("TrNo"));
 				train.setSeat(rs.getInt("seats"));
 				trains.add(train);
 			}
