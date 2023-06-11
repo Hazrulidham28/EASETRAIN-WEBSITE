@@ -139,7 +139,7 @@ public class trainServiceImpl implements trainService{
 	@Override
 	public List<trainBean> getTrainsBetweenStations(String fromStation, String toStation) throws TrainException {
 		List<trainBean> trains = null;
-		String query = "SELECT * FROM TRAIN WHERE UPPER(FROM_STN) LIKE UPPER(?) AND UPPER(TO_STN) LIKE UPPER(?)";
+		String query = "SELECT * FROM TRAIN WHERE ";
 
 		try {
 			Connection con = DBUtil.getConnection();

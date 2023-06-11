@@ -60,7 +60,7 @@ public class userRegisterServlet extends HttpServlet {
 				pw.println("<div class='tab'><p1 class='menu'>Successfully Registered !</p1></div>");
 			}
 			else {
-				RequestDispatcher rd = request.getRequestDispatcher("Account.html");
+				RequestDispatcher rd = request.getRequestDispatcher("StartUp.html");
 				rd.include(request, response);
 				
 				pw.println("<div class='tab'><p1 class='menu'>"+message+" !</p1></div>");

@@ -30,18 +30,18 @@
         </span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#">
+            <form action="userloginServlet" method = "post">
                 <div class="input-box">
                     <span class="icon">
                     <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" required>
+                    <input type="email" name = "email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                     <ion-icon name ="lock-closed"></ion-icon></span>
-                    <input type="password"required>
+                    <input type="password" name ="pass"required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">

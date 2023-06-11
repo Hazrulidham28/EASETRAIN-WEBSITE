@@ -89,7 +89,7 @@ public class userServiceImpl implements userService {
 	@Override
 	public String updateUser(customerBean customer) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE CUSTOMER SET FNAME=?,LNAME=?,ADDR=?,PHNO=? WHERE MAILID=?";
+		String query = "UPDATE CUSTOMER SET ICNUM=?,USERNAME=?,EMAIL=?,PHONENO=? WHERE EMAIL=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -158,13 +158,13 @@ public class userServiceImpl implements userService {
 	}
 
 	@Override
-	public customerBean loginUser(String username, String password) throws TrainException {
+	public customerBean loginUser(String email, String password) throws TrainException {
 		customerBean customer = null;
-		String query = "SELECT * FROM CUSTOMER WHERE MAILID=? AND PWORD=?";
+		String query = "SELECT * FROM CUSTOMER WHERE EMAIL=? AND PASSWORD=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, username);
+			ps.setString(1, email);
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
@@ -172,8 +172,8 @@ public class userServiceImpl implements userService {
 				customer.setUsername(rs.getString("username"));
 				customer.setIcnum(rs.getString("IcNum"));
 				customer.setEmail(rs.getString("email"));
-				customer.setPhoneNum(rs.getString("phoneNum"));
-				customer.setPass(rs.getString("pass"));
+				customer.setPhoneNum(rs.getString("phoneNO"));
+				customer.setPass(rs.getString("password"));
 
 			} else {
 				throw new TrainException(ResponseCode.UNAUTHORIZED);
