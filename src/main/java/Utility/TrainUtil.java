@@ -3,17 +3,21 @@ package Utility;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.UUID;
+import java.io.IOException;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.TrainException;
+import Bean.adminBean;
 import Bean.customerBean;
 import Constant.ResponseCode;
 import Constant.userRole;
 import service.userService;
+import service.adminService;
 import service.Implementation.userServiceImpl;
+import service.Implementation.adminServiceImpl;
 
 public class TrainUtil {
 
@@ -30,6 +34,7 @@ public class TrainUtil {
 		userService userService = new userServiceImpl(userRole);
 		String responseCode = ResponseCode.UNAUTHORIZED.toString();
 		try {
+			
 			customerBean user = userService.loginUser(email, password);
 
 			// Add the user details to the ServletContext with key as role name
@@ -95,4 +100,31 @@ public class TrainUtil {
 	public static customerBean getCurrentCustomer(HttpServletRequest req) {
 		return (customerBean) req.getServletContext().getAttribute(userRole.CUSTOMER.toString());
 	}
+	
+	public static String adminlogin(HttpServletRequest request, HttpServletResponse response, userRole userRole,
+			String email, String password) {
+		String responseCode = ResponseCode.UNAUTHORIZED.toString();
+		
+		try {
+			adminService adminService = new adminServiceImpl(userRole);
+			adminBean admin= adminService.loginAdmin(email,password);
+
+			
+
+			// set the responseCode to success
+			responseCode = ResponseCode.SUCCESS.toString();
+
+		} catch (TrainException e) {
+			responseCode += " : " + e.getMessage();
+		}
+		
+		
+		
+		
+				return responseCode;
+		
+		
+	}
+	
+	
 }

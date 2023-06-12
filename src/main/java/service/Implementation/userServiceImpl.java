@@ -17,7 +17,7 @@ import service.userService;
 public class userServiceImpl implements userService {
 	
 	private final String TABLE_NAME;
-
+	//auto set table name
 	public userServiceImpl(userRole userRole) {
 		// TODO Auto-generated constructor stub
 		

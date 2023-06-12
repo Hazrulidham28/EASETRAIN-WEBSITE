@@ -1,0 +1,63 @@
+package service.Implementation;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import Bean.TrainException;
+import Bean.adminBean;
+
+import Constant.ResponseCode;
+import Constant.userRole;
+import Utility.DBUtil;
+import service.adminService;
+
+
+public class adminServiceImpl implements adminService{
+	
+	
+		
+		private final String TABLE_NAME;
+		//auto set table name
+		public adminServiceImpl(userRole userRole) {
+			// TODO Auto-generated constructor stub
+			
+				if(userRole == null) {
+					userRole=userRole.ADMIN;
+					
+					
+				}
+				this.TABLE_NAME=userRole.toString();
+		}
+	
+	@Override
+	public  adminBean loginAdmin(String email, String password) throws TrainException {
+		adminBean admin = null;
+		String query = "SELECT * FROM"+ TABLE_NAME +" WHERE EMAIL=? AND PASSWORD=?";
+		try {
+			Connection con = DBUtil.getConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				admin = new adminBean();
+				admin.setName(rs.getString("username"));
+				admin.setAddress(rs.getString("IcNum"));
+				admin.setAdEmail(rs.getString("email"));
+				admin.setPhoneNo(rs.getString("phoneNO"));
+				admin.setPass(rs.getString("password"));
+
+			} else {
+				throw new TrainException(ResponseCode.UNAUTHORIZED);
+			}
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new TrainException(e.getMessage());
+		}
+		return admin;
+	}
+
+}

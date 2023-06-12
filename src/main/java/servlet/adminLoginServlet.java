@@ -44,7 +44,7 @@ public class adminLoginServlet extends HttpServlet {
 		
 			//need to create new method for admin login soon
 		
-			String msg= TrainUtil.login(request, response, userRole.ADMIN, email, pass);
+			String msg= TrainUtil.adminlogin(request, response, userRole.ADMIN, email, pass);
 			
 				//check if user has authenticate
 				if(ResponseCode.SUCCESS.toString().equalsIgnoreCase(msg)) {
