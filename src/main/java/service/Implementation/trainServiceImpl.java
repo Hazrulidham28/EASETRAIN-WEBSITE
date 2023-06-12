@@ -108,63 +108,8 @@ public class trainServiceImpl implements trainService{
 		return train;
 	}
 
-	@Override
-	public List<trainBean> getAllTrains() throws TrainException {
-		List<trainBean> trains = null;
-		String query = "SELECT * FROM TRAIN";
-		try {
-			Connection con = DBUtil.getConnection();
-			PreparedStatement ps = con.prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			trains = new ArrayList<trainBean>();
-			while (rs.next()) {
-				trainBean train = new trainBean();
-				train.setFare(rs.getDouble("fare"));
-				train.setFromStn(rs.getString("FromStn"));
-				train.setToStn(rs.getString("ToStn"));
-				train.setTrName(rs.getString("Trname"));
-				train.setTrNo(rs.getString("TrNo"));
-				train.setSeat(rs.getInt("seats"));
-				trains.add(train);
-			}
+	
 
-			ps.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			throw new TrainException(e.getMessage());
-		}
-		return trains;
-	}
-
-	@Override
-	public List<trainBean> getTrainsBetweenStations(String fromStation, String toStation) throws TrainException {
-		List<trainBean> trains = null;
-		String query = "SELECT * FROM TRAIN WHERE ";
-
-		try {
-			Connection con = DBUtil.getConnection();
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, "%" + fromStation + "%");
-			ps.setString(2, "%" + toStation + "%");
-			ResultSet rs = ps.executeQuery();
-			trains = new ArrayList<trainBean>();
-			while (rs.next()) {
-				trainBean train = new trainBean();
-				train.setFare(rs.getDouble("fare"));
-				train.setFromStn(rs.getString("FromStn"));
-				train.setToStn(rs.getString("ToStn"));
-				train.setTrName(rs.getString("TrName"));
-				train.setTrNo(rs.getString("TrNo"));
-				train.setSeat(rs.getInt("seats"));
-				trains.add(train);
-			}
-
-			ps.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			throw new TrainException(e.getMessage());
-		}
-		return trains;
-	}
+	
 	
 }
