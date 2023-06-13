@@ -2,7 +2,7 @@ package Constant;
 
 import java.util.Arrays;
 import java.util.Optional;
-
+//for message and for login authentication
 public enum ResponseCode {
 	
 	SUCCESS(200, "OK"),

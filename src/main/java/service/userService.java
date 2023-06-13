@@ -4,7 +4,7 @@ import java.util.List;
 
 import Bean.TrainException;
 import Bean.customerBean;
-
+//use implements method to implement customer crud operations..
 public interface userService {
 
 	public customerBean getUserByEmailId(String userEmailId) throws TrainException;

@@ -17,7 +17,7 @@ import service.adminService;
 public class adminServiceImpl implements adminService{
 	
 	
-		
+		//set table name based on uesr's role
 		private final String TABLE_NAME;
 		//auto set table name
 		public adminServiceImpl(userRole userRole) {
@@ -36,6 +36,7 @@ public class adminServiceImpl implements adminService{
 		adminBean admin = null;
 		String query = "SELECT * FROM"+ TABLE_NAME +" WHERE EMAIL=? AND PASSWORD=?";
 		try {
+			//establish connection with databse from package util and retrieve thru instantiation 
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, email);

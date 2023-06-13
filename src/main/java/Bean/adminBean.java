@@ -6,6 +6,10 @@ public class adminBean implements Serializable {
 	/**
 	 * 
 	 */
+	
+	//create bean class for admin
+	//contain basic constructor, setter and getter method
+	//to increase eficiency in data access
 	private static final long serialVersionUID = 1L;
 	
 	private String adEmail;

@@ -28,6 +28,7 @@ public class userServiceImpl implements userService {
 			}
 			this.TABLE_NAME=userRole.toString();
 	}
+	//search user by their email
 
 	@Override
 	public customerBean getUserByEmailId(String customerEmailId) throws TrainException {
@@ -39,6 +40,7 @@ public class userServiceImpl implements userService {
 			ps.setString(1, customerEmailId);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
+				//set the data to customer bean then geter method at servlet
 				customer = new customerBean();
 				customer.setUsername(rs.getString("username"));
 				customer.setIcnum(rs.getString("IcNum"));

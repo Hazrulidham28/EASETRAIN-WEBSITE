@@ -7,6 +7,10 @@ public class bookingDetailBean implements Serializable{
 	/**
 	 * 
 	 */
+	
+	//to create object for history/booking details 
+	//easier to store data to database
+	
 	private static final long serialVersionUID = 1L;
 	
 		private String userName;

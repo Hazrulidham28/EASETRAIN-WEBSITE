@@ -9,6 +9,7 @@ public class TrainException extends IOException  {
 	/**
 	 * 
 	 */
+	//for error message
 	private static final long serialVersionUID = 1L;
 	
 	private String errorCode;
