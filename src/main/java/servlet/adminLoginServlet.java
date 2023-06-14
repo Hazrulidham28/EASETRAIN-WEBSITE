@@ -42,23 +42,26 @@ public class adminLoginServlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
 		
-			//need to create new method for admin login soon
-		
+			
+			//msg to gain response code for login
 			String msg= TrainUtil.adminlogin(request, response, userRole.ADMIN, email, pass);
 			
 				//check if user has authenticate
 				if(ResponseCode.SUCCESS.toString().equalsIgnoreCase(msg)) {
+					//redirect to page homepage.html
 					RequestDispatcher rd = request.getRequestDispatcher("Homepage.html");
 					rd.include(request, response);
-					
+					//print div class to inform that login is successfull
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Successfully Login !</p></div>");
 					
 					
 					
 				}
 				else {
+					//redirect to adminlogin.html
 					RequestDispatcher rd = request.getRequestDispatcher("AdminLogin.html");
 					rd.include(request, response);
+					//print div class to inform unsuccessfull of login 
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Wrong email or password !</p></div>");
 					
 				}

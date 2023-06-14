@@ -18,8 +18,10 @@ public class trainServiceImpl implements trainService{
 	@Override
 	public String addTrain(trainBean train) {
 		String responseCode = ResponseCode.FAILURE.toString();
+		//query instruction to insert train value 
 		String query = "INSERT INTO TRAIN VALUES(?,?,?,?,?,?)";
 		try {
+			//establish connection thru DBUtil class
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setNString(1, train.getTrName());
@@ -28,14 +30,17 @@ public class trainServiceImpl implements trainService{
 			ps.setString(4, train.getToStn());
 			ps.setLong(5, train.getSeat());
 			ps.setDouble(6, train.getFare());
+			//need to change to execute();
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
+				//if rs is exists set response code to success
 				responseCode = ResponseCode.SUCCESS.toString();
 			}
 			ps.close();
 		} catch (SQLException | TrainException e) {
 			responseCode += " : " + e.getMessage();
 		}
+		//return response code
 		return responseCode;
 	}
 	

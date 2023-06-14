@@ -22,7 +22,7 @@ public class adminServiceImpl implements adminService{
 		//auto set table name
 		public adminServiceImpl(userRole userRole) {
 			// TODO Auto-generated constructor stub
-			
+				//check the condition if the user role iss null then set the user role as admin 
 				if(userRole == null) {
 					userRole=userRole.ADMIN;
 					
@@ -34,9 +34,11 @@ public class adminServiceImpl implements adminService{
 	@Override
 	public  adminBean loginAdmin(String email, String password) throws TrainException {
 		adminBean admin = null;
+		// create string query as query for instruction to the database
 		String query = "SELECT * FROM"+ TABLE_NAME +" WHERE EMAIL=? AND PASSWORD=?";
 		try {
 			//establish connection with databse from package util and retrieve thru instantiation 
+			//establish connecttion tru DBUtil class 
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, email);

@@ -38,10 +38,11 @@ public class userloginServlet extends HttpServlet {
 		PrintWriter pw=response.getWriter();
 		response.setContentType("text/html");
 		
+		//request email and password from user login html page
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
 		
-			//get resonse message
+			//get response message
 		
 			String msg= TrainUtil.login(request, response, userRole.CUSTOMER, email, pass);
 			
@@ -56,6 +57,7 @@ public class userloginServlet extends HttpServlet {
 					
 				}
 				else {
+					//return back to login page
 					RequestDispatcher rd = request.getRequestDispatcher("StartUp.html");
 					rd.include(request, response);
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Wrong email or password !</p></div>");

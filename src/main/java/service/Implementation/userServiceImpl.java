@@ -146,6 +146,7 @@ public class userServiceImpl implements userService {
 			ps.setString(5,customer.getPass());
 			int i = ps.executeUpdate();
 			if (i>0) {
+				//if ps exists then set the response code to success
 				responseCode = ResponseCode.SUCCESS.toString();
 			}
 			ps.close();
@@ -171,6 +172,7 @@ public class userServiceImpl implements userService {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				customer = new customerBean();
+				//set current customer data to customer obj
 				customer.setUsername(rs.getString("username"));
 				customer.setIcnum(rs.getString("IcNum"));
 				customer.setEmail(rs.getString("email"));
