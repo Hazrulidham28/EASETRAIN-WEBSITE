@@ -24,7 +24,7 @@ public class userRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public userRegisterServlet() {
         // TODO Auto-generated constructor stub
