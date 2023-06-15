@@ -18,43 +18,39 @@
         </nav>
     </header>
     <div class="wrapper">
-        <form id="buyticket">
-            <h3 class="bookingtext" id="bookingtext">Booking Details</h3>
-            
-            <p class="from">From</p>
-            <select name="selectorigin" id="origin">
-                <option value="#">Select origin</option>
-                <option value="klsentral">KL SENTRAL</option>
-                <option value="tapah">TAPAH</option>
-                <option value="padangbesar">PADANG BESAR</option>
-            </select>
-            
-            
-            <p class="to">To</p>
-            <select name="selectdestination" id="destination">
-                <option value="#">Select destination</option>
-                <option value="padangbesar">PADANG BESAR</option>
-                <option value="tapah">TAPAH</option>
-                <option value="klsentral">KL SENTRAL</option>
-            </select>
+    <ul class="ticket-list">
+        <li>
+            <input type="checkbox" id="ticket1" />
+            <label for="ticket1">
+                <h3>Train Code: TRN001</h3>
+                <p>Date: June 15, 2023</p>
+                <p>Origin Station: Station A</p>
+                <p>Destination Station: Station B</p>
+                <p>Departure Time: 08:00 AM</p>
+                <p>Arrival Time: 10:30 AM</p>
+                <p>Duration: 2 hours 30 minutes</p>
+                <p>Fare Platinum: $50</p>
+                <p>Fare Gold: $35</p>
+            </label>
+        </li>
+        <li>
+            <input type="checkbox" id="ticket2" />
+            <label for="ticket2">
+                <h3>Train Code: TRN002</h3>
+                <p>Date: June 17, 2023</p>
+                <p>Origin Station: Station C</p>
+                <p>Destination Station: Station D</p>
+                <p>Departure Time: 09:30 AM</p>
+                <p>Arrival Time: 12:00 PM</p>
+                <p>Duration: 2 hours 30 minutes</p>
+                <p>Fare Platinum: $60</p>
+                <p>Fare Gold: $45</p>
+            </label>
+        </li>
+        <!-- Add more <li> elements for additional tickets -->
+    </ul>
+</div>
 
-            <p class="dpdate">Departure Date</p>
-            <label for="departdate"></label>
-            <input type="date" id="departdate" name="departdate">
-            
-            <div class="type">
-                <input type="radio" id="typetrip" name="typetrip" value="oneway">
-                <label for="oneway">One-Way Trip</label>
-                <input type="radio" id="typetrip" name="typetrip" value="roundtrip">
-                <label for="roundtrip">Round Trip</label>
-            </div>
-            
-            <div class="button">
-                <button type="button" value="#">Proceed</button>
-            <button type="button" value="reset">Reset</button>
-            </div>
-            
-        </form>
-    </div>
+
 </body>
 </html>

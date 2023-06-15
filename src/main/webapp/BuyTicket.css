@@ -69,43 +69,39 @@ header {
         
 
     }
+    /* CSS for ticket list */
+	.ticket-list {
+  		list-style: none;
+  		padding: 0;
+	}
 
-    h3 {
-        margin-block-start: 10%;
-        margin-inline-start: 10%;
-        color: aliceblue;
-    }
+	.ticket-list li {
+  		display: grid;
+  		grid-template-columns: 1fr;
+  		align-items: center;
+  		padding: 10px;
+  		border-bottom: 1px solid #ccc;
+	}
 
-    .from {
-        margin: 0;
-        margin-block-start: 10%;
-        margin-inline-start: 10%;
-        color: aliceblue;
-    }
+	.ticket-list li label {
+  		display: grid;
+  		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  		align-items: center;
+  		column-gap: 10px;
+	}
 
+/* CSS for train code checkbox */
+.ticket-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
 
-    .to {
-        margin: 0;
-        margin-block-start: 10%;
-        margin-inline-start: 10%;
-        color: aliceblue;
-    }
+/* Optional: Styling for selected ticket */
+.ticket-list li.selected {
+  background-color: #f2f2f2;
+}
 
-    .dpdate {
-        margin: 0;
-        margin-block-start: 10%;
-        margin-inline-start: 10%;
-        color: aliceblue;
-    }
-
-    .type {
-        margin: 0;
-        margin-block-start: 10%;
-        color: aliceblue;
-    }
-
-    .button {
-        position: relative;
-        margin-block-start: 10%;
-        padding: 20px;
-    }
+/* Optional: Hover effect on list items */
+.ticket-list li:hover {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
