@@ -14,6 +14,8 @@ public class customerBean implements Serializable{
 	private String email;
 	private String phoneNum;
 	private String pass;
+	private String profilePic;
+	private double walletBal;
 	
 	public String getUsername() {
 		return username;
@@ -26,6 +28,18 @@ public class customerBean implements Serializable{
 	}
 	public void setIcnum(String icnum) {
 		this.icnum = icnum;
+	}
+	public String getProfilePic() {
+		return profilePic;
+	}
+	public void setProfilePic(String profilePic) {
+		this.profilePic = profilePic;
+	}
+	public double getWalletBal() {
+		return walletBal;
+	}
+	public void setWalletBal(double walletBal) {
+		this.walletBal = walletBal;
 	}
 	public String getEmail() {
 		return email;

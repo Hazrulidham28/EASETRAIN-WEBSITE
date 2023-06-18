@@ -91,15 +91,17 @@ public class userServiceImpl implements userService {
 	@Override
 	public String updateUser(customerBean customer) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE CUSTOMER SET ICNUM=?,USERNAME=?,EMAIL=?,PHONENO=? WHERE EMAIL=?";
+		String query = "UPDATE CUSTOMER SET ICNUM=?,USERNAME=?,EMAIL=?,PHONENO=?,WALLBAL=?,PROFILEPIC=? WHERE EMAIL=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, customer.getUsername());
-			ps.setString(2, customer.getIcnum());
+			ps.setString(1, customer.getIcnum());
+			ps.setString(2, customer.getUsername());
 			ps.setString(3, customer.getEmail());
 			ps.setNString(4, customer.getPhoneNum());
-			ps.setString(5, customer.getPass());
+			ps.setDouble(5, customer.getWalletBal());
+			ps.setString(6, customer.getProfilePic());
+			ps.setString(7, customer.getEmail());
 			int response = ps.executeUpdate();
 			if (response > 0) {
 				responseCode = ResponseCode.SUCCESS.toString();
@@ -134,7 +136,7 @@ public class userServiceImpl implements userService {
 	@Override
 	public String registerUser(customerBean customer) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "INSERT INTO customer VALUES(?,?,?,?,?)";
+		String query = "INSERT INTO customer VALUES(?,?,?,?,?,?,?)";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -144,6 +146,8 @@ public class userServiceImpl implements userService {
 			ps.setString(3, customer.getEmail());
 			ps.setString(4,customer.getPhoneNum());
 			ps.setString(5,customer.getPass());
+			ps.setDouble(6,0.00);
+			ps.setString(7,"https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H");
 			int i = ps.executeUpdate();
 			if (i>0) {
 				//if ps exists then set the response code to success
@@ -178,6 +182,8 @@ public class userServiceImpl implements userService {
 				customer.setEmail(rs.getString("email"));
 				customer.setPhoneNum(rs.getString("phoneNO"));
 				customer.setPass(rs.getString("password"));
+				customer.setWalletBal(rs.getDouble("walletbalance"));
+				customer.setProfilePic(rs.getString("profilepic"));
 
 			} else {
 				throw new TrainException(ResponseCode.UNAUTHORIZED);
