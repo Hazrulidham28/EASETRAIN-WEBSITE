@@ -45,12 +45,30 @@
         <p>Total</p>
         <p>MYR 41.00</p>
     </div>
- 	<div id="paymentOptions">
-    <div id ="trainWallet"><button type="button">Train Wallet</button></div>
-    <div id ="creditCard"><button type="button">Credit Card</button></div>
-    <div id = "debitCard"><button type="button">Debit Card</button></div>
-    <div id = "tngCard"><button type="button">Touch N Go</button></div>
-    </div>
+ 	<form method="post"  action = "" id="paymentOptions">
+	<div class="trainWallet">
+    <input type="radio" id="trainWallet" name="trainWallet" value="Train Wallet">
+    <label for ="trainWallet">Train Wallet</label>
+	</div>
+	
+	<div class="creditCard">
+    <input type="radio" id="creditCard" name="creditCard" value="creditCard">
+    <label for ="creditCard">Credit Card</label>
+	</div>
+	
+	<div class="debitCard">
+    <input type="radio" id="debitCard" name="debitCard" value="debitCard">
+    <label for ="debitCard">Debit Card</label>
+	</div>
+	
+	<div class="tng">
+    <input type="radio" id="tng" name="tng" value="tng">
+    <label for ="tng">Touch N Go</label>
+	</div>
+	
+	
+	<button type="submit" value="Submit">Submit</button>
+ 	</form>
     </div>
 </body>
 </html>

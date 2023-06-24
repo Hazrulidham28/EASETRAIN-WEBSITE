@@ -116,28 +116,13 @@ header {
 
         padding-bottom:2.5vh ;
     }
-
-    #paymentOptions{
-        
-        display:flex;
-        flex-wrap: wrap;
-        justify-content:center;
-        padding-left: 3.5vw;
-        padding-right: 3.5vw;
-        padding-top: 10vh;;
-        margin-top: 0vh;
-        margin-left:10vw;
-        margin-right: 10vw;
-        min-height: 50vh;
-        min-width: 50vw;
-       
-       
-    }
-
-    button{
-        color:#C07F00;
-        width:25vw;
-        height:10vh;
-
-    }
+    
+  	.trainWallet{
+		  
+		  width: 100px;
+		  height:100px;
+		  
+	  }
+  	
+    
     
