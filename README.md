@@ -37,5 +37,6 @@ profilepic varchar(100)
 INSERT VALUE INTO TABLE
 
 1.INSERT INTO admin VALUES('adminDemo@gmail.com','admin123','admin1','Tapah Perak','0123456789');
+
 2.INSERT INTO customer VALUES('000000-00-0000','customer1','cust@gmail.com','0123456789','customer1',50.00,'https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H');
 
