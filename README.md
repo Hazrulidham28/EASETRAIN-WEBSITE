@@ -23,4 +23,5 @@ phoneNo varchar(12) NOT NULL
 );
 
 INSERT VALUE INTO TABLE
+
 INSERT INTO admin VALUES('adminDemo@gmail.com','admin123','admin1','Tapah Perak','0123456789');
