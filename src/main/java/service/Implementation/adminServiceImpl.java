@@ -35,7 +35,7 @@ public class adminServiceImpl implements adminService{
 	public  adminBean loginAdmin(String email, String password) throws TrainException {
 		adminBean admin = null;
 		// create string query as query for instruction to the database
-		String query = "SELECT * FROM"+ TABLE_NAME +" WHERE EMAIL=? AND PASSWORD=?";
+		String query = "SELECT * FROM admin WHERE EMAIL=? AND PASS=?";
 		try {
 			//establish connection with databse from package util and retrieve thru instantiation 
 			//establish connecttion tru DBUtil class 
@@ -47,10 +47,10 @@ public class adminServiceImpl implements adminService{
 			if (rs.next()) {
 				admin = new adminBean();
 				admin.setName(rs.getString("username"));
-				admin.setAddress(rs.getString("IcNum"));
+				admin.setAddress(rs.getString("address"));
 				admin.setAdEmail(rs.getString("email"));
 				admin.setPhoneNo(rs.getString("phoneNO"));
-				admin.setPass(rs.getString("password"));
+				admin.setPass(rs.getString("pass"));
 
 			} else {
 				throw new TrainException(ResponseCode.UNAUTHORIZED);

@@ -47,6 +47,8 @@ public class userServiceImpl implements userService {
 				customer.setEmail(rs.getString("email"));
 				customer.setPhoneNum(rs.getString("phoneNum"));
 				customer.setPass(rs.getString("pass"));
+				customer.setWalletBal(rs.getDouble("walletbalance"));
+				customer.setProfilePic(rs.getString("profilepic"));
 			} else {
 				throw new TrainException(ResponseCode.NO_CONTENT);
 			}
@@ -74,6 +76,8 @@ public class userServiceImpl implements userService {
 				customer.setEmail(rs.getString("email"));
 				customer.setPhoneNum(rs.getString("phoneNum"));
 				customer.setPass(rs.getString("pass"));
+				customer.setWalletBal(rs.getDouble("walletbalance"));
+				customer.setProfilePic(rs.getString("profilepic"));
 				customers.add(customer);
 			}
 
@@ -167,7 +171,7 @@ public class userServiceImpl implements userService {
 	@Override
 	public customerBean loginUser(String email, String password) throws TrainException {
 		customerBean customer = null;
-		String query = "SELECT * FROM CUSTOMER WHERE EMAIL=? AND PASSWORD=?";
+		String query = "SELECT * FROM CUSTOMER WHERE EMAIL=? AND PASS=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -181,7 +185,7 @@ public class userServiceImpl implements userService {
 				customer.setIcnum(rs.getString("IcNum"));
 				customer.setEmail(rs.getString("email"));
 				customer.setPhoneNum(rs.getString("phoneNO"));
-				customer.setPass(rs.getString("password"));
+				customer.setPass(rs.getString("pass"));
 				customer.setWalletBal(rs.getDouble("walletbalance"));
 				customer.setProfilePic(rs.getString("profilepic"));
 

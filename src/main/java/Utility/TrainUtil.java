@@ -82,7 +82,7 @@ public class TrainUtil {
 
 		Cookie cookie2 = new Cookie("sessionIdFor" + userRole.CUSTOMER.toString(), UUID.randomUUID().toString());
 		cookie2.setMaxAge(0);
-
+//
 		response.addCookie(cookie);
 		response.addCookie(cookie2);
 
@@ -106,6 +106,7 @@ public class TrainUtil {
 		String responseCode = ResponseCode.UNAUTHORIZED.toString();
 		
 		try {
+			
 			adminService adminService = new adminServiceImpl(userRole);
 			adminBean admin= adminService.loginAdmin(email,password);
 
