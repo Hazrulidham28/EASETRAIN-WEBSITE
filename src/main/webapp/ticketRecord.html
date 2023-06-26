@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ticketRecord.css">
+
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="top">
+            <br><br><br>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="user">
+        <img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
+            <div>
+                <p class="bold">admin name</p>
+                
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-id-card"></i>
+                    <span class="nav-item">Profile</span>
+                </a>
+                <span class="tooltip">Profile</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-shopping-bag"></i>
+                    <span class="nav-item">BuyTicket</span>
+                </a>
+                <span class="tooltip">Buy</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-food-menu"></i>
+                    <span class="nav-item">HistoryTicket</span>
+                </a>
+                <span class="tooltip">History</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-log-out"></i>
+                    <span class="nav-item">LogOut</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <header>
+            <h2 class = "logo">TrainEase</h2>
+			<nav class = "navigation">
+            <a href ="#">Home</a>
+            <a href ="#">About us</a>
+            <a href ="#">Service</a>
+            <a href ="#">Contact </a>
+        </nav>
+            </header>
+        </div>
+        <div class = "BigDiv">
+	<div class = "title">
+    <h1>Ticket Record</h1>
+    </div>
+    <div id="trainSummary">
+        <h3>Alor Setar > Ipoh</h3>
+        <p>Gold - 9245</p>
+        <p>19 Mar 2022 /16:30</p>
+    </div>
+
+    <div id ="seatNumber">
+        <p>Seat: A5</p>
+    </div>
+
+    <div id="passenger">
+        <p>Name: AHMAD ALBAB</p>
+        <p>Mykad: 192299029922</p>
+    </div>
+  	</div>
+    </div>
+
+</body>
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+
+    btn.onclick = function () {
+        sidebar.classList.toggle('active');
+    };
+</script>
+</html>
