@@ -109,6 +109,21 @@ public class TrainUtil {
 			
 			adminService adminService = new adminServiceImpl(userRole);
 			adminBean admin= adminService.loginAdmin(email,password);
+			// Add the user details to the ServletContext with key as role name
+						request.getServletContext().setAttribute(userRole.toString(), admin);
+
+						// Store the userName and email in the http session
+						request.getSession().setAttribute("uName", admin.getName());
+						request.getSession().setAttribute("mailid", admin.getAdEmail());
+
+						// Add the sessionId to the cookie with key as sessionId
+						Cookie cookie = new Cookie("sessionIdFor" + userRole.toString(), UUID.randomUUID().toString());
+
+						// set the max age for the cookie
+						cookie.setMaxAge(600); // Expires after 10 MIN
+
+						// add the cookie to the response
+						response.addCookie(cookie);
 
 			
 
