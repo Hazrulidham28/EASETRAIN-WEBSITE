@@ -207,17 +207,11 @@ header {
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
-    
+
 .container1 h2{
     padding-top: 2%;
     border-width: 0px 0px 2px 0px;
     border-style: solid;
-    margin-bottom: 2%;
-}
-
-.container1 h2 {
-    padding-top: 2%;
-    border-bottom: 2px solid white;
     margin-bottom: 2%;
 }
 
