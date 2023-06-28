@@ -10,37 +10,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.TrainException;
-import Bean.trainBean;
+import Bean.customerBean;
 import Constant.userRole;
 import Utility.TrainUtil;
-import service.trainService;
-import service.Implementation.trainServiceImpl;
 
 /**
- * Servlet implementation class seatingServlet
+ * Servlet implementation class userPaymentServlet
  */
-@WebServlet("/seatingServlet")
-public class seatingServlet extends HttpServlet {
+@WebServlet("/userPaymentServlet")
+public class userPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	trainService train= new trainServiceImpl();
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		response.setContentType("text/html");
 		TrainUtil.validateUserAuthorization(request, userRole.CUSTOMER);
 		ServletContext sct = request.getServletContext();
+		customerBean cust= TrainUtil.getCurrentCustomer(request);
 		
-		try {
+		
+try {
 			
-			String Seat=request.getParameter("btn");
-			System.out.println(Seat);
+			System.out.println(cust.getEmail());
+			sct.setAttribute("currCust", cust);
 			
-			sct.setAttribute("seat", Seat);
-			response.sendRedirect("userPaymentServlet");
+			response.sendRedirect("Payment.jsp");
+			//then go to servlet create booking history
 			}
 			catch(Exception e){
 				
@@ -48,6 +45,7 @@ public class seatingServlet extends HttpServlet {
 			
 	}
 	}
+
+	
+
 }
-
-

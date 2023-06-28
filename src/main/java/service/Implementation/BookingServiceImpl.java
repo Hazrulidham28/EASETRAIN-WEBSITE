@@ -17,13 +17,13 @@ import service.BookingService;
 public class BookingServiceImpl implements BookingService{
 
 	@Override
-	public List<historyBean> getAllBookingsByCustomerId(String customerEmailId) throws TrainException {
+	public List<historyBean> getAllBookingsByCustomerId(String customerId) throws TrainException {
 		List<historyBean> transactions = null;
 		String query = "SELECT * FROM RESERVE WHERE EMAIL=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, customerEmailId);
+			ps.setString(1, customerId);
 			ResultSet rs = ps.executeQuery();
 			transactions = new ArrayList<historyBean>();
 			while (rs.next()) {

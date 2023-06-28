@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page import="Bean.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
         <div class="user">
             <img src="https://drive.google.com/uc?export=view&id=19qPXXg7Q2ua0oHZEaEG0PXnMg0C704Hy" alt="customer" class="user-img">
             <div>
-                <p class="bold">Abdul hadi 		</p>
+                <p class="bold"><%=session.getAttribute("uName") %></p>
             </div>
         </div>
         <ul>
@@ -76,21 +77,27 @@
             <div id="Title-Container">
                 <h1>Order Details</h1>
             </div>
+            
+            <%
+            customerBean customer=(customerBean) application.getAttribute("currCust");
+            trainBean train=(trainBean) application.getAttribute("trainBook");
+            
+            %>
             <div id="passenger">
                 <p id="LittleTitle">Passenger Detail</p>
-                <p>Name: AHMAD ALBAB</p>
-                <p>MyKad No: 192288029922</p>
-                <p>Contact No: 0183973179</p>
+                <p>Name: <%=customer.getUsername() %></p>
+                <p>MyKad No: <%=customer.getIcnum() %></p>
+                <p>Contact No:<%=customer.getPhoneNum() %></p>
             </div>
             <div id="ticketDetail">
-                <p>ALOR SETAR > IPOH</p>
-                <p>Gold - 9425</p>
-                <p>17 May 2023 / 16.30</p>
+                <p><%=train.getFromStn() %>> <%=train.getToStn() %></p>
+                <p><%=train.getType() %> - <%=train.getTrNo() %></p>
+                <p><%=train.getDate() %> / <%=train.getDepTime() %></p>
             </div> 
             <div id="orderSummary">
                 <p id="LittleTitle">Order Summary</p>
                 <p>Total</p>
-                <p>MYR 41.00</p>
+                <p>MYR <%=train.getFare() %></p>
             </div>
             <h1 class="paymentTitle">Payment Options</h1>
             
