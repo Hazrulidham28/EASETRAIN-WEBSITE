@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -522,26 +524,26 @@ button:hover .star-6 {
         </div>
          <h1 class="title">Train Seat Booking</h1>
     	 <p class="select">Select your desired seat:</p>   
-   <form method="post" action="">
+   <form method="post" action="seatingServlet">
          <div id="seat-container">
 	<div class="bakul">
       <ol>
     <li>
       <ol class="seats">
         <li class="seat">
-          <input type="button" id="1A" />
+          <input type="checkbox" name ="btn" value="1A" />
           <label for="1A">1A</label>
         </li>
         <li class="seat">
-          <input type="button" id="1B" />
+          <input type="button"name ="btn" value="1B" />
           <label for="1B">1B</label>
         </li>
         <li class="seat">
-          <input type="button" id="1C" />
+          <input type="button" name ="btn"id="1C" />
           <label for="1C">1C</label>
         </li>
         <li class="seat">
-          <input type="button" id="1D" />
+          <input type="button"name ="btn" id="1D" />
           <label for="1D">1D</label>
         </li>
        
@@ -550,19 +552,19 @@ button:hover .star-6 {
     <li>
       <ol class="seats">
         <li class="seat">
-          <input type="button" id="2A" />
+          <input type="button" name ="btn" id="2A" />
           <label for="2A">2A</label>
         </li>
         <li class="seat">
-          <input type="button" id="2B" />
+          <input type="button" name ="btn" id="2B" />
           <label for="2B">2B</label>
         </li>
         <li class="seat">
-          <input type="button" id="2C" />
+          <input type="button" name ="btn" id="2C" />
           <label for="2C">2C</label>
         </li>
         <li class="seat">
-          <input type="button" id="2D" />
+          <input type="button" name ="btn" id="2D" />
           <label for="2D">2D</label>
         </li>
       
@@ -571,19 +573,19 @@ button:hover .star-6 {
     <li>
       <ol class="seats">
         <li class="seat">
-          <input type="button" id="3A" />
+          <input type="button" name ="btn" id="3A" />
           <label for="3A">3A</label>
         </li>
         <li class="seat">
-          <input type="button" id="3B" />
+          <input type="button" name ="btn" id="3B" />
           <label for="3B">3B</label>
         </li>
         <li class="seat">
-          <input type="button" id="3C" />
+          <input type="button" name ="btn" id="3C" />
           <label for="3C">3C</label>
         </li>
         <li class="seat">
-          <input type="button" id="3D" />
+          <input type="button" name ="btn" id="3D" />
           <label for="3D">3D</label>
         </li>
        
@@ -592,19 +594,19 @@ button:hover .star-6 {
     <li>
       <ol class="seats">
         <li class="seat">
-          <input type="button" id="4A" />
+          <input type="button" name ="btn" id="4A" />
           <label for="4A">4A</label>
         </li>
         <li class="seat">
-          <input type="button" id="4B" />
+          <input type="button" name ="btn" id="4B" />
           <label for="4B">4B</label>
         </li>
         <li class="seat">
-          <input type="button" id="4C" />
+          <input type="button" name ="btn" id="4C" />
           <label for="4C">4C</label>
         </li>
         <li class="seat">
-          <input type="button" id="4D" />
+          <input type="button" name ="btn" id="4D" />
           <label for="4D">4D</label>
         </li>
       
@@ -613,19 +615,19 @@ button:hover .star-6 {
     <li>
       <ol class="seats">
         <li class="seat">
-          <input type="button" id="5A" />
+          <input type="button" name ="btn" id="5A" />
           <label for="5A">5A</label>
         </li>
         <li class="seat">
-          <input type="button" id="5B" />
+          <input type="button" name ="btn" id="5B" />
           <label for="5B">5B</label>
         </li>
         <li class="seat">
-          <input type="button" id="5C" />
+          <input type="button" name ="btn" id="5C" />
           <label for="5C">5C</label>
         </li>
         <li class="seat">
-          <input type="button" id="5D" />
+          <input type="button" iname ="btn" d="5D" />
           <label for="5D">5D</label>
         </li>
       

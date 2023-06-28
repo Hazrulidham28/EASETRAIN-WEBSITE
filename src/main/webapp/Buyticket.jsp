@@ -70,7 +70,7 @@
                 </nav>
             </header>
         </div>
-        <form>
+        <form action = "booktrain" method = "post">
             <div class="container1">
                 <h2>Book your Ticket:</h2>
                 <table border="2">
@@ -94,7 +94,7 @@
                %>
                
                <tr>
-				    <td><input type="checkbox" name="train" value=<%=trains.getTrNo() %> ><%=trains.getTrNo() %> </td>
+				    <td><input type="checkbox" name="train" value="<%=trains.getTrNo()%>"><%=trains.getTrNo() %> </td>
               		<td><%=trains.getDate() %></td>
 				    <td><%=trains.getFromStn() %></td>
 				    <td><%=trains.getToStn() %></td>
