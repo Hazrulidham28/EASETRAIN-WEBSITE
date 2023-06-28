@@ -11,11 +11,46 @@ public class trainBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String trNo;
-	private String trName;
 	private String fromStn;
 	private String toStn;
-	private int seat;
+	private String DepTime;
+	private String ArrTime;
+	private String duration;
+	private String type;
 	private double fare;
+	private String date;
+	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getDepTime() {
+		return DepTime;
+	}
+	public void setDepTime(String depTime) {
+		DepTime = depTime;
+	}
+	public String getArrTime() {
+		return ArrTime;
+	}
+	public void setArrTime(String arrTime) {
+		ArrTime = arrTime;
+	}
+	public String getDuration() {
+		return duration;
+	}
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 	
 	public String getTrNo() {
 		return trNo;
@@ -23,12 +58,7 @@ public class trainBean implements Serializable{
 	public void setTrNo(String trNo) {
 		this.trNo = trNo;
 	}
-	public String getTrName() {
-		return trName;
-	}
-	public void setTrName(String trName) {
-		this.trName = trName;
-	}
+	
 	public String getFromStn() {
 		return fromStn;
 	}
@@ -41,12 +71,7 @@ public class trainBean implements Serializable{
 	public void setToStn(String toStn) {
 		this.toStn = toStn;
 	}
-	public int getSeat() {
-		return seat;
-	}
-	public void setSeat(int seat) {
-		this.seat = seat;
-	}
+	
 	public double getFare() {
 		return fare;
 	}

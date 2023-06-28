@@ -13,33 +13,69 @@ public class bookingDetailBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-		private String userName;
-		private String icNum;
-		private String phoneNum;
-		private String fromStn;
-		private String toStn;
-		private String date;
-		private int seat;
-		private double amount;
+		private String transId;
+		private String fromStn;//
+		private String toStn;//
+		private String date;//
+		private String depTime;//
+		private String arrTime;//
+		private String duration;//
+		private String type;// gold or plat
+		private String email;
+		private String trNo;//
+		private String seat;
+		private double amount;//
 		
-		public String getUserName() {
-			return userName;
+		public String getTrNo() {
+			return trNo;
 		}
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setTrNo(String trNo) {
+			this.trNo = trNo;
 		}
-		public String getIcNum() {
-			return icNum;
+		
+		
+		
+		public String getDepTime() {
+			return depTime;
 		}
-		public void setIcNum(String icNum) {
-			this.icNum = icNum;
+		public void setDepTime(String depTime) {
+			this.depTime = depTime;
 		}
-		public String getPhoneNum() {
-			return phoneNum;
+		public String getArrTime() {
+			return arrTime;
 		}
-		public void setPhoneNum(String phoneNum) {
-			this.phoneNum = phoneNum;
+		public void setArrTime(String arrTime) {
+			this.arrTime = arrTime;
 		}
+		public String getDuration() {
+			return duration;
+		}
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
+		
+		
+		
+		
+		public String getTransId() {
+			return transId;
+		}
+		public void setTransId(String transId) {
+			this.transId = transId;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		
 		public String getFromStn() {
 			return fromStn;
 		}
@@ -58,10 +94,10 @@ public class bookingDetailBean implements Serializable{
 		public void setDate(String date) {
 			this.date = date;
 		}
-		public int getSeat() {
+		public String getSeat() {
 			return seat;
 		}
-		public void setSeat(int seat) {
+		public void setSeat(String seat) {
 			this.seat = seat;
 		}
 		public double getAmount() {
