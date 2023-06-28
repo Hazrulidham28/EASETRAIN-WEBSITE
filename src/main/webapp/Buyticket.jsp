@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@page import="java.util.List"%>
+<%@page import="Bean.*"%>
 
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
         <div class="user">
             <img src="https://drive.google.com/uc?export=view&id=19qPXXg7Q2ua0oHZEaEG0PXnMg0C704Hy" alt="customer" class="user-img">
             <div>
-                <p class="bold">Hadi</p>
+                <p class="bold"><%=session.getAttribute("uName")%></p>
                 <p>Wallet: RM0.00</p>
             </div>
         </div>
@@ -73,18 +74,38 @@
             <div class="container1">
                 <h2>Book your Ticket:</h2>
                 <table border="2">
-                    <tr>
-                        <th>Train Code</th>
-                        <th>Date</th>
-                        <th>Origin Station</th>
-                        <th>Destination Station</th>
-                        <th>Departure Time</th>
-                        <th>Arrival Time</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Fare</th>
-                    </tr>
-                    
+				  <tr>
+				    <th>Train Code</th>
+				    <th>Date</th>
+				    <th>Origin Station</th>
+				    <th>Destination Station</th>
+				    <th>Departure Time</th>
+				    <th>Arrival Time</th>
+				    <th>Duration</th>
+				    <th>Type</th>
+				    <th>Fare</th>
+				  </tr>
+				  
+               <%
+               List<trainBean>train=(List<trainBean>)session.getAttribute("trains");
+               
+               for(trainBean trains:train){
+            	   
+               %>
+               
+               <tr>
+				    <td><input type="checkbox" name="train" value=<%=trains.getTrNo() %> ><%=trains.getTrNo() %> </td>
+              		<td><%=trains.getDate() %></td>
+				    <td><%=trains.getFromStn() %></td>
+				    <td><%=trains.getToStn() %></td>
+				    <td><%=trains.getDepTime() %></td>
+				    <td><%=trains.getArrTime() %></td>
+				    <td><%=trains.getDuration() %></td>
+				    <td><%=trains.getType() %></td>
+				    <td><%=trains.getFare() %></td>
+				  </tr>
+              
+              <%} %>
                   
                    
                 </table>

@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Utility.TrainUtil;
 
@@ -36,32 +37,26 @@ public class userviewtrain extends HttpServlet {
 		
 			try {
 				List<trainBean> trains = tservice.getAllTrains();
-				request.getSession().setAttribute("trains", trains);
+				//request.getSession().setAttribute("trains", trains);
+					trainBean train1= trains.get(0);
+					System.out.println(train1.getTrNo());
+					
 				
-				pw.println();
 				if(trains != null && !trains.isEmpty()){
 					
-					RequestDispatcher rd = request.getRequestDispatcher("Buyticket.jsp");
+					HttpSession session = request.getSession();
+					session.setAttribute("trains",trains);
+					response.sendRedirect("Buyticket.jsp");
+					//RequestDispatcher rd = request.getRequestDispatcher("Buyticket.jsp");
+					//rd.include(request, response);
+					//rd.forward(request, response);
+					
+					
+				}else{
+					RequestDispatcher rd = request.getRequestDispatcher("AccountTest.html");
 					rd.include(request, response);
-					rd.forward(request, response);
 					
-						for(trainBean train: trains) {
-							
-							pw.println("<table>");
-					        pw.println("<tr>");
-					        pw.println("<td><input type=\"checkbox\" name=\"train\" value=\""+train.getTrNo()+"\">"+train.getTrNo()+"</td>");
-					        pw.println("<td>"+train.getDate()+"</td>");
-					        pw.println("<td>"+train.getFromStn()+"</td>");
-					        pw.println("<td>"+train.getToStn()+"</td>");
-					        pw.println("<td>"+train.getDepTime()+"</td>");
-					        pw.println("<td>"+train.getArrTime()+"</td>");
-					        pw.println("<td>"+train.getDuration()+"</td>");
-					        pw.println("<td>"+train.getType()+"</td>");
-					        pw.println("<td>"+train.getFare()+"</td>");
-					        pw.println("</tr>");
-						}
-					
-				}else{}
+				}
 				
 			}catch(Exception e){
 				
