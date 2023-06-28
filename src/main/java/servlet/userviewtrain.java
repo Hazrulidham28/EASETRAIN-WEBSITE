@@ -40,7 +40,7 @@ public class userviewtrain extends HttpServlet {
 				//request.getSession().setAttribute("trains", trains);
 					trainBean train1= trains.get(0);
 					System.out.println(train1.getTrNo());
-					
+					//
 				
 				if(trains != null && !trains.isEmpty()){
 					
