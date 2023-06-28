@@ -33,10 +33,13 @@ walletbalance double,
 profilepic varchar(100)
 
 );
+3.
+CREATE TABLE TRAIN(TrNo varchar(20) PRIMARY KEY,date varchar(15) not null,FromStn varchar(20) not null,ToStn varchar(20) not null,depTime varchar(20) not null,arrTime varchar(20) not null,duration varchar(20) not null,type varchar(20) not null,fare double not null);
 
 INSERT VALUE INTO TABLE
 
 1.INSERT INTO admin VALUES('adminDemo@gmail.com','admin123','admin1','Tapah Perak','0123456789');
 
 2.INSERT INTO customer VALUES('000000-00-0000','customer1','cust@gmail.com','0123456789','customer1',50.00,'https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H');
+3.insert into TRAIN values('TRxxx','01-01-2001','Kuala Lumpur','Tapah','12:45 PM','17:00 PM','4hrs 15min','PLATINUM',94.00);
 
