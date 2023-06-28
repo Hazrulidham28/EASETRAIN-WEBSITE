@@ -19,19 +19,20 @@ public class trainServiceImpl implements trainService{
 	public String addTrain(trainBean train) {
 		String responseCode = ResponseCode.FAILURE.toString();
 		//query instruction to insert train value 
-		String query = "INSERT INTO TRAIN VALUES(?,?,?,?,?,?,?,?)";
+		String query = "INSERT INTO TRAIN VALUES(?,?,?,?,?,?,?,?,?)";
 		try {
 			//establish connection thru DBUtil class
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setNString(1, train.getTrNo());
-			ps.setString(2, train.getFromStn());
-			ps.setString(3, train.getToStn());
-			ps.setString(4, train.getDepTime());
-			ps.setString(5, train.getArrTime());
-			ps.setString(6, train.getDuration());
-			ps.setString(7, train.getType());
-			ps.setDouble(8, train.getFare());
+			ps.setString(2, train.getDate());
+			ps.setString(3, train.getFromStn());
+			ps.setString(4, train.getToStn());
+			ps.setString(5, train.getDepTime());
+			ps.setString(6, train.getArrTime());
+			ps.setString(7, train.getDuration());
+			ps.setString(8, train.getType());
+			ps.setDouble(9, train.getFare());
 			//need to change to execute();
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
@@ -68,18 +69,19 @@ public class trainServiceImpl implements trainService{
 	@Override
 	public String updateTrain(trainBean train) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE TRAIN SET TrNo=?, FromStn=?,ToStn=?,depTime=?,arrTime=?, duration=?,type=?,fare=? WHERE TrNo=?";
+		String query = "UPDATE TRAIN SET TrNo=?,date=?, FromStn=?,ToStn=?,depTime=?,arrTime=?, duration=?,type=?,fare=? WHERE TrNo=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, train.getTrNo());
-			ps.setString(2, train.getFromStn());
-			ps.setString(3, train.getToStn());
-			ps.setString(4, train.getDepTime());
-			ps.setString(5, train.getArrTime());
-			ps.setString(6, train.getDuration());
-			ps.setString(7, train.getType());
-			ps.setDouble(8, train.getFare());
+			ps.setString(2, train.getDate());
+			ps.setString(3, train.getFromStn());
+			ps.setString(4, train.getToStn());
+			ps.setString(5, train.getDepTime());
+			ps.setString(6, train.getArrTime());
+			ps.setString(7, train.getDuration());
+			ps.setString(8, train.getType());
+			ps.setDouble(9, train.getFare());
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				responseCode = ResponseCode.SUCCESS.toString();
@@ -103,6 +105,7 @@ public class trainServiceImpl implements trainService{
 			if (rs.next()) {
 				train = new trainBean();
 				train.setTrNo(rs.getString("TrNo"));
+				train.setDate(rs.getString("date"));
 				train.setFromStn(rs.getString("FromStn"));
 				train.setToStn(rs.getString("ToStn"));
 				train.setDepTime(rs.getString("depTime"));
@@ -119,6 +122,36 @@ public class trainServiceImpl implements trainService{
 			throw new TrainException(e.getMessage());
 		}
 		return train;
+	}
+	@Override
+	public List<trainBean> getAllTrains() throws TrainException {
+		List<trainBean> trains = null;
+		String query = "SELECT * FROM TRAIN";
+		try {
+			Connection con = DBUtil.getConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			trains = new ArrayList<trainBean>();
+			while (rs.next()) {
+				trainBean train = new trainBean();
+				train.setTrNo(rs.getString("TrNo"));
+				train.setDate(rs.getString("date"));
+				train.setFromStn(rs.getString("FromStn"));
+				train.setToStn(rs.getString("ToStn"));
+				train.setDepTime(rs.getString("depTime"));
+				train.setArrTime(rs.getString("arrTime"));
+				train.setDuration(rs.getString("duration"));
+				train.setType(rs.getString("type"));
+				train.setFare(rs.getDouble("fare"));
+				trains.add(train);
+			}
+
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new TrainException(e.getMessage());
+		}
+		return trains;
 	}
 
 	

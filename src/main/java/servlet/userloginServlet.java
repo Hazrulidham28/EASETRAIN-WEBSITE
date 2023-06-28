@@ -48,7 +48,7 @@ public class userloginServlet extends HttpServlet {
 			
 				//check if user has authenticate
 				if(ResponseCode.SUCCESS.toString().equalsIgnoreCase(msg)) {
-					RequestDispatcher rd = request.getRequestDispatcher("Homepage.html");
+					RequestDispatcher rd = request.getRequestDispatcher("Home.html");
 					rd.include(request, response);
 					
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Successfully Login !</p></div>");
