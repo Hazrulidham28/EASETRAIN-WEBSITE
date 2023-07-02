@@ -19,7 +19,7 @@ public class BookingServiceImpl implements BookingService{
 	@Override
 	public List<historyBean> getAllBookingsByCustomerId(String customerId) throws TrainException {
 		List<historyBean> transactions = null;
-		String query = "SELECT * FROM RESERVE WHERE EMAIL=?";
+		String query = "SELECT * FROM RESERVE WHERE IcNum=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
