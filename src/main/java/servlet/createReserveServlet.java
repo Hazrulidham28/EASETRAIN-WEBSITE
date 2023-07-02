@@ -35,9 +35,10 @@ public class createReserveServlet extends HttpServlet {
 		
 		try {
 			
+			customerBean user =(customerBean) sct.getAttribute("currCust");
 			trainBean train= (trainBean)sct.getAttribute("trainBook");
-			String seat=(String)sct.getAttribute("seats");
-			String userMailId = TrainUtil.getCurrentUserEmail(request);
+			String seat=(String)sct.getAttribute("seat");
+			//String userIc =(String) request.getSession().getAttribute("mailid");
 				
 				//store to historybean
 				historyBean book= new historyBean();
@@ -48,14 +49,15 @@ public class createReserveServlet extends HttpServlet {
 				book.setArrTime(train.getArrTime());
 				book.setDuration(train.getDuration());
 				book.setType(train.getType());
-				book.setEmail(userMailId);
+				book.setIcNo(user.getIcnum());
 				book.setTrNo(train.getTrNo());
 				book.setSeat(seat);
 				book.setAmount(train.getFare());
 				
-				//historyBean reservation= booking.createHistory(book);
+				//save data to reservation
+				historyBean reservation= booking.createHistory(book);
 				
-				response.sendRedirect("");
+				response.sendRedirect("userviewtrain");
 			}
 			catch(Exception e){
 				

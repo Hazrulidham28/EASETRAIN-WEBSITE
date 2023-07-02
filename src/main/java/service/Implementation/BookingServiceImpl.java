@@ -29,7 +29,7 @@ public class BookingServiceImpl implements BookingService{
 			while (rs.next()) {
 				historyBean transaction = new historyBean();
 				transaction.setTransId(rs.getString("transId"));
-				transaction.setEmail(rs.getString("email"));
+				transaction.setIcNo(rs.getString("IcNum"));
 				transaction.setTrNo(rs.getString("TrNo"));
 				transaction.setDate(rs.getString("date"));
 				transaction.setFromStn(rs.getString("fromStn"));
@@ -62,7 +62,7 @@ public class BookingServiceImpl implements BookingService{
 			PreparedStatement ps = con.prepareStatement(query);
 			String transactionId = UUID.randomUUID().toString();
 			ps.setString(1, transactionId);
-			ps.setString(2, details.getEmail());
+			ps.setString(2, details.getIcNo());
 			ps.setString(3, details.getTrNo());
 			ps.setString(4, details.getDate());
 			ps.setString(5, details.getFromStn());

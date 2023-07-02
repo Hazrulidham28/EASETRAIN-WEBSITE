@@ -21,7 +21,7 @@ public class bookingDetailBean implements Serializable{
 		private String arrTime;//
 		private String duration;//
 		private String type;// gold or plat
-		private String email;
+		private String IcNo;
 		private String trNo;//
 		private String seat;
 		private double amount;//
@@ -69,13 +69,14 @@ public class bookingDetailBean implements Serializable{
 		public void setTransId(String transId) {
 			this.transId = transId;
 		}
-		public String getEmail() {
-			return email;
-		}
-		public void setEmail(String email) {
-			this.email = email;
-		}
 		
+		
+		public String getIcNo() {
+			return IcNo;
+		}
+		public void setIcNo(String icNo) {
+			IcNo = icNo;
+		}
 		public String getFromStn() {
 			return fromStn;
 		}

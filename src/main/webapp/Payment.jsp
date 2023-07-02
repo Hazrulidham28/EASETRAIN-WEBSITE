@@ -103,7 +103,7 @@
             
             <div class="payment-container">
                 <!-- submit the payment option to the database -->
-                <form action="" method="post">
+                <form action="createReserveServlet" method="post">
                     <div class="wrapper">
                         <div class="option">
                             <input class="input" type="radio" name="btn" value="Train Wallet" checked="">
