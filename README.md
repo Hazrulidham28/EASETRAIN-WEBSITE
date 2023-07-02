@@ -36,6 +36,9 @@ profilepic varchar(100)
 3.
 CREATE TABLE TRAIN(TrNo varchar(20) PRIMARY KEY,date varchar(15) not null,FromStn varchar(20) not null,ToStn varchar(20) not null,depTime varchar(20) not null,arrTime varchar(20) not null,duration varchar(20) not null,type varchar(20) not null,fare double not null);
 
+4.Create table for reserve
+ CREATE TABLE RESERVE(transId varchar(30) PRIMARY KEY,IcNum varchar(40) REFERENCES customer(IcNum),TrNo varchar(20) REFERENCES train,date varchar(20),fromStn varchar(20),toStn varchar(20),seat varchar(10),amount double,DepTime varchar(20),ArrTime varchar(20),duration varchar(20),type varchar(20));
+
 INSERT VALUE INTO TABLE
 
 1.INSERT INTO admin VALUES('adminDemo@gmail.com','admin123','admin1','Tapah Perak','0123456789');
