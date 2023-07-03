@@ -73,7 +73,7 @@
         </div>
         <form action = "booktrain" method = "post">
             <div class="container1">
-                <h2>Book your Ticket:</h2>
+                <h2>Ticket Record:</h2>
                 <table border="2">
 				  <tr>
 				    <th>Train Code</th>
@@ -85,33 +85,35 @@
 				    <th>Duration</th>
 				    <th>Type</th>
 				    <th>Fare</th>
+				    <th>Seat</th>
 				  </tr>
 				  
                <%
-               List<trainBean>train=(List<trainBean>)session.getAttribute("trains");
                
-               for(trainBean trains:train){
+               List<historyBean> booking = (List<historyBean>)session.getAttribute("booklist");
+               
+               for(historyBean books:booking){
             	   
                %>
                
                <tr>
-				    <td><input type="checkbox" name="train" value="<%=trains.getTrNo()%>"><%=trains.getTrNo() %> </td>
-              		<td><%=trains.getDate() %></td>
-				    <td><%=trains.getFromStn() %></td>
-				    <td><%=trains.getToStn() %></td>
-				    <td><%=trains.getDepTime() %></td>
-				    <td><%=trains.getArrTime() %></td>
-				    <td><%=trains.getDuration() %></td>
-				    <td><%=trains.getType() %></td>
-				    <td><%=trains.getFare() %></td>
+				    <td><%=books.getTrNo()%></td>
+              		<td><%=books.getDate() %></td>
+				    <td><%=books.getFromStn() %></td>
+				    <td><%=books.getToStn() %></td>
+				    <td><%=books.getDepTime() %></td>
+				    <td><%=books.getArrTime() %></td>
+				    <td><%=books.getDuration() %></td>
+				    <td><%=books.getType() %></td>
+				    <td><%=books.getAmount() %></td>
+				    <td><%=books.getSeat() %></td>
 				  </tr>
               
               <%} %>
                   
                    
                 </table>
-                <button type="submit" class="submit-btn">Proceed</button>
-                <button type="reset" class="reset-btn">Reset</button>
+                
             </div>
         </form>
     </div>

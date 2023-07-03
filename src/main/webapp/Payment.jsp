@@ -38,7 +38,7 @@
                 <span class="tooltip">Profile</span>
             </li>
             <li>
-                <a href="#">
+                <a href="userviewtrain">
                     <i class="bx bxs-shopping-bag"></i>
                     <span class="nav-item">BuyTicket</span>
                 </a>

@@ -466,7 +466,7 @@ button:hover .star-6 {
         <div class="user">
         <img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
             <div>
-                <p class="bold">admin name</p>
+                <p class="bold"><%=session.getAttribute("uName")%></p>
                 
             </div>
         </div>

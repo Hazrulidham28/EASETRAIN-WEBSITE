@@ -57,7 +57,10 @@ public class createReserveServlet extends HttpServlet {
 				//save data to reservation
 				historyBean reservation= booking.createHistory(book);
 				
-				response.sendRedirect("userviewtrain");
+				sct.removeAttribute("seat");
+				sct.removeAttribute("trainBook");
+				
+				response.sendRedirect("Home.html");
 			}
 			catch(Exception e){
 				
