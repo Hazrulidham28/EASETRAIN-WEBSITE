@@ -64,7 +64,7 @@
             <header>
                 <h2 class="logo">TrainEase</h2>
                 <nav class="navigation">
-                    <a href="Homepage.jsp">Home</a>
+                    <a href="Home.html">Home</a>
                     <a href="#">About us</a>
                     <a href="#">Service</a>
                     <a href="#">Contact</a>
