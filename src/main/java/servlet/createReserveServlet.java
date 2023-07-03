@@ -33,6 +33,13 @@ public class createReserveServlet extends HttpServlet {
 		
 		ServletContext sct = request.getServletContext();
 		
+		/*
+		 * ServletContext sct = request.getServletContext();
+		 * sct.setAttribute("currCust",object);
+		 * sct.getAttribute("currCust");
+		 * 
+		 * */
+		
 		try {
 			
 			customerBean user =(customerBean) sct.getAttribute("currCust");
@@ -57,6 +64,7 @@ public class createReserveServlet extends HttpServlet {
 				//save data to reservation
 				historyBean reservation= booking.createHistory(book);
 				
+				//remove the servlet context attribute for the next book
 				sct.removeAttribute("seat");
 				sct.removeAttribute("trainBook");
 				
