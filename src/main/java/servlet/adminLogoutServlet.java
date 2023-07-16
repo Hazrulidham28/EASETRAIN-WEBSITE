@@ -25,19 +25,19 @@ public class adminLogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html");
 			if(TrainUtil.isLoggedIn(request, userRole.ADMIN)) {
 				
 				//call logout
 				TrainUtil.logout(response);
 				
-				RequestDispatcher rd=request.getRequestDispatcher("adminLogin.html");
+				RequestDispatcher rd=request.getRequestDispatcher("AdminLogin.html");
 				rd.include(request, response);
 			}
 			else {
 				
-				RequestDispatcher rd=request.getRequestDispatcher("adminLogin.html");
+				RequestDispatcher rd=request.getRequestDispatcher("AdminLogin.html");
 				rd.include(request, response);
 				
 			}
