@@ -66,35 +66,35 @@
         </div>
         <ul>
             <li>
-                <a href="#">
+                <a href="adminviewtrain">
                     <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">View Train</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">View</span>
             </li>
             <li>
                 <a href="#">
                     <i class="bx bx-id-card"></i>
-                    <span class="nav-item">Profile</span>
+                    <span class="nav-item">Add Train</span>
                 </a>
-                <span class="tooltip">Profile</span>
+                <span class="tooltip">Add</span>
             </li>
             <li>
                 <a href="#">
                     <i class="bx bxs-shopping-bag"></i>
-                    <span class="nav-item">BuyTicket</span>
+                    <span class="nav-item">Update Train</span>
                 </a>
-                <span class="tooltip">Buy</span>
+                <span class="tooltip">Update</span>
             </li>
             <li>
                 <a href="#">
                     <i class="bx bxs-food-menu"></i>
-                    <span class="nav-item">HistoryTicket</span>
+                    <span class="nav-item">Delete Train</span>
                 </a>
-                <span class="tooltip">History</span>
+                <span class="tooltip">Delete</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminLogoutServlet">
                     <i class="bx bx-log-out"></i>
                     <span class="nav-item">LogOut</span>
                 </a>
