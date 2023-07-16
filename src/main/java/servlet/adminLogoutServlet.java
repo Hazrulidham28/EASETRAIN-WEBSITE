@@ -32,12 +32,12 @@ public class adminLogoutServlet extends HttpServlet {
 				//call logout
 				TrainUtil.logout(response);
 				
-				RequestDispatcher rd=request.getRequestDispatcher("AdminLogin.html");
+				RequestDispatcher rd=request.getRequestDispatcher("index.html");
 				rd.include(request, response);
 			}
 			else {
 				
-				RequestDispatcher rd=request.getRequestDispatcher("AdminLogin.html");
+				RequestDispatcher rd=request.getRequestDispatcher("index.html");
 				rd.include(request, response);
 				
 			}

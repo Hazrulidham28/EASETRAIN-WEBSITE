@@ -58,7 +58,7 @@ public class userloginServlet extends HttpServlet {
 				}
 				else {
 					//return back to login page
-					RequestDispatcher rd = request.getRequestDispatcher("StartUp.html");
+					RequestDispatcher rd = request.getRequestDispatcher("index.html");
 					rd.include(request, response);
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Wrong email or password !</p></div>");
 					
