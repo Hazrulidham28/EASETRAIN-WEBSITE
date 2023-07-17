@@ -47,6 +47,7 @@
 		border-color: #6c9;
 		box-shadow: 0 0 5px rgba(108, 153, 153, 0.5);
 	}
+	
  
 </style>
 
@@ -122,21 +123,21 @@
             </header>
         </div>
         
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return confirm('Are you sure you want to add this train?');">
     <div class="container1">
         <h2>Add Train's Ticket</h2>
         <table>
             <tr>
                 <td><label for="train_no">Train No:</label></td>
-                <td><input type="text" id="train_no" name="train_no" style="width: 350px; height: 30px; font-size: 12pt" required></td>
+                <td><input type="text" id="train_no" name="train_no" style="width: 350px; height: 30px; font-size: 12pt" autocomplete="off" required></td>
             </tr>
             <tr>
                 <td><label for="departure_station">Departure Station:</label></td>
-                <td><input type="text" id="departure_station" name="departure_station" style="width: 350px; height: 30px; font-size: 12pt" required></td>
+                <td><input type="text" id="departure_station" name="departure_station" style="width: 350px; height: 30px; font-size: 12pt" autocomplete="off" required></td>
             </tr>
             <tr>
                 <td><label for="arrival_station">Arrival Station:</label></td>
-                <td><input type="text" id="arrival_station" name="arrival_station" style="width: 350px; height: 30px; font-size: 12pt" required></td>
+                <td><input type="text" id="arrival_station" name="arrival_station" style="width: 350px; height: 30px; font-size: 12pt" autocomplete="off" required></td>
             </tr>
             <tr>
                 <td><label for="departure_time">Departure Time:</label></td>
@@ -158,7 +159,7 @@
             </tr>
             <tr>
                 <td><label for="fare">Fare (RM):</label></td>
-                <td><input type="text" class="floatNumberField" id="fare" name="fare" style="height: 30px; font-size: 12pt" required /></td>
+                <td><input type="text" class="floatNumberField" id="fare" name="fare" style="height: 30px; font-size: 12pt" autocomplete="off" required /></td>
             </tr>
             <tr>
                 <td><label for="date">Date:</label></td>
