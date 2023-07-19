@@ -51,7 +51,7 @@
                 <span class="tooltip">Update</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminDeleteTrainServlet">
                     <i class='bx bxs-trash' ></i>
                     <span class="nav-item">DeleteTrain</span>
                 </a>
@@ -80,7 +80,7 @@
                 </nav>
             </header>
         </div>
-        <form action = "#" method = "post" onsubmit="return confirm('Are you sure you want to delete this train?');">
+        <form action = "adminDeleteTrain" method = "post" onsubmit="return confirm('Are you sure you want to delete this train?');">
             <div class="container1">
                 <h2>Choose 1 Train:</h2>
                 <table border="2">

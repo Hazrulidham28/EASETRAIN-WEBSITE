@@ -98,7 +98,7 @@
                 <span class="tooltip">Update</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminDeleteTrainServlet">
                     <i class='bx bxs-trash' ></i>
                     <span class="nav-item">DeleteTrain</span>
                 </a>

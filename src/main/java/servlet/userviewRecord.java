@@ -60,8 +60,8 @@ public class userviewRecord extends HttpServlet {
 				
 				
 			}else{
-				RequestDispatcher rd = request.getRequestDispatcher("AccountTest.html");
-				rd.include(request, response);
+				response.sendRedirect("userviewtrain");
+				
 				
 			}
 			

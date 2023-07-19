@@ -36,21 +36,21 @@
                 <span class="tooltip">View</span>
             </li>
             <li>
-                <a href="adminaddtrain">
+                <a href="adminaddtrain.jsp">
                     <i class="bx bxs-shopping-bag"></i>
                     <span class="nav-item">Add Train</span>
                 </a>
                 <span class="tooltip">Add</span>
             </li>
             <li>
-                <a href="userviewRecord">
+                <a href="#">
                     <i class="bx bxs-food-menu"></i>
                     <span class="nav-item">Update Train</span>
                 </a>
                 <span class="tooltip">Update</span>
             </li>
              <li>
-                <a href="userviewRecord">
+                <a href="adminDeleteTrainServlet">
                     <i class="bx bxs-food-menu"></i>
                     <span class="nav-item">Delete Train</span>
                 </a>
