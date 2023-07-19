@@ -20,6 +20,8 @@ public class trainBean implements Serializable{
 	private double fare;
 	private String date;
 	
+	
+	
 	public String getDate() {
 		return date;
 	}

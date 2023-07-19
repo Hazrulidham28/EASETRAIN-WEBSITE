@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
-
+import javax.servlet.ServletContext;
 import Bean.TrainException;
 import Bean.trainBean;
 import Constant.ResponseCode;
@@ -67,12 +67,14 @@ public class trainServiceImpl implements trainService{
 	}
 	
 	@Override
-	public String updateTrain(trainBean train) {
+	public String updateTrain(trainBean train,String trNo) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE TRAIN SET TrNo=?,date=?, FromStn=?,ToStn=?,depTime=?,arrTime=?, duration=?,type=?,fare=? WHERE TrNo=?";
+		String query = "UPDATE train SET TrNo=?,date=?,FromStn=?,ToStn=?,depTime=?,arrTime=?,duration=?,type=?,fare=? WHERE TrNo=?";
+		
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
+			
 			ps.setString(1, train.getTrNo());
 			ps.setString(2, train.getDate());
 			ps.setString(3, train.getFromStn());
@@ -82,8 +84,9 @@ public class trainServiceImpl implements trainService{
 			ps.setString(7, train.getDuration());
 			ps.setString(8, train.getType());
 			ps.setDouble(9, train.getFare());
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			ps.setString(10, trNo);
+			int i = ps.executeUpdate();
+			if (i>0) {
 				responseCode = ResponseCode.SUCCESS.toString();
 			}
 			ps.close();
