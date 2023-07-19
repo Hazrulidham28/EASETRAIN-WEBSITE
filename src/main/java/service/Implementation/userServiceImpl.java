@@ -95,19 +95,17 @@ public class userServiceImpl implements userService {
 	@Override
 	public String updateUser(customerBean customer) {
 		String responseCode = ResponseCode.FAILURE.toString();
-		String query = "UPDATE CUSTOMER SET ICNUM=?,USERNAME=?,EMAIL=?,PHONENO=?,WALLBAL=?,PROFILEPIC=? WHERE EMAIL=?";
+		String query = "UPDATE customer SET username=?,email=?,PhoneNO=? WHERE IcNum=?";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, customer.getIcnum());
-			ps.setString(2, customer.getUsername());
-			ps.setString(3, customer.getEmail());
-			ps.setNString(4, customer.getPhoneNum());
-			ps.setDouble(5, customer.getWalletBal());
-			ps.setString(6, customer.getProfilePic());
-			ps.setString(7, customer.getEmail());
-			int response = ps.executeUpdate();
-			if (response > 0) {
+			
+			ps.setString(1, customer.getUsername());
+			ps.setString(2, customer.getEmail());
+			ps.setString(3, customer.getPhoneNum());
+			ps.setString(4, customer.getIcnum());
+			int i = ps.executeUpdate();
+			if (i > 0) {
 				responseCode = ResponseCode.SUCCESS.toString();
 			}
 			ps.close();

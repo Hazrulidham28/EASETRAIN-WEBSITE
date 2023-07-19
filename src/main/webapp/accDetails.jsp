@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="Bean.*" %>
+<%@page import="Utility.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +26,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Profile</title>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="accDetails.css">
 
 </head>
-
+ <%
+            customerBean customer=(customerBean) application.getAttribute("currentCustomer");
+            
+  %>
 <body>
 	<div class="sidebar">
 	
@@ -39,7 +44,7 @@
         <div class="user">
         	<img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
             <div>
-                <p class="bold"><%=session.getAttribute("uname")%></p>
+                <p class="bold"><%=session.getAttribute("uName")%></p>
             </div>
         </div>
         
@@ -89,26 +94,26 @@
                 </nav>
             </header>
         </div>
-        <% customerBean customer = TrainUtil.getCurrentCustomer; %>
-        <form action="" method="POST" onsubmit="return confirm('Confirm your details>');">
+        
+        <form action="userUpdateAcc" method="POST" onsubmit="return confirm('Confirm your details>');">
     <div class="container1">
         <h2>Manage your profile</h2>
         <table>
             <tr>
                 <td style="width: 20%"><label for="uname" style="font-size: 14pt">Name:</label>
-                <td><input type="text" id="uname" name="uname" autocomplete="off" value="" required></td>
+                <td><input type="text" id="uname" name="uname" autocomplete="off" value=<%=customer.getUsername() %>></td>
             </tr>
             <tr>
                 <td><label for="Icno" style="font-size: 14pt">Identity Card number:</label></td>
-                <td><input type="text" id="Icno" name="Icno" autocomplete="off" required></td>
+                <td><input type="text" id="Icno" name="Icno" autocomplete="off" readonly value=<%=customer.getIcnum() %>></td>
             </tr>
             <tr>
                 <td><label for="email" style="font-size: 14pt">E-mail:</label></td>
-                <td><input type="text" id="email" name="email" autocomplete="off" required></td>
+                <td><input type="text" id="email" name="email" autocomplete="off" value=<%=customer.getEmail() %>></td>
             </tr>
             <tr>
                 <td><label for="phonenum" style="font-size: 14pt">Phone Number:</label></td>
-                <td><input type="text" id="phonenum" name="phonenum" autocomplete="off" required></td>
+                <td><input type="text" id="phonenum" name="phonenum" autocomplete="off" value=<%=customer.getPhoneNum() %>></td>
             </tr>
 
             <tr>
