@@ -24,6 +24,7 @@ public class userViewAccount extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		customerBean customer = TrainUtil.getCurrentCustomer(request);
+		System.out.println(customer.getUsername());
 		
 		ServletContext sct = request.getServletContext();
 try {

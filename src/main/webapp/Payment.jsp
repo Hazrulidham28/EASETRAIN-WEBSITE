@@ -24,14 +24,7 @@
         </div>
         <ul>
             <li>
-                <a href="#">
-                    <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-                <a href="#">
+                <a href="userViewAccount">
                     <i class="bx bx-id-card"></i>
                     <span class="nav-item">Profile</span>
                 </a>
@@ -45,14 +38,14 @@
                 <span class="tooltip">Buy</span>
             </li>
             <li>
-                <a href="#">
+                <a href="userviewRecord">
                     <i class="bx bxs-food-menu"></i>
                     <span class="nav-item">HistoryTicket</span>
                 </a>
                 <span class="tooltip">History</span>
             </li>
             <li>
-                <a href="#">
+                <a href="userLogoutServlet">
                     <i class="bx bx-log-out"></i>
                     <span class="nav-item">LogOut</span>
                 </a>

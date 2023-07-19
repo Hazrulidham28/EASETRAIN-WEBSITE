@@ -31,6 +31,7 @@
 </head>
  <%
             customerBean customer=(customerBean) application.getAttribute("currentCustomer");
+ 			String username=customer.getUsername();
             
   %>
 <body>
@@ -50,7 +51,7 @@
         
         <ul>
             <li>
-                <a href="#">
+                <a href="userViewAccount">
                     <i class="bx bx-id-card"></i>
                     <span class="nav-item">Profile</span>
                 </a>
@@ -101,19 +102,19 @@
         <table>
             <tr>
                 <td style="width: 20%"><label for="uname" style="font-size: 14pt">Name:</label>
-                <td><input type="text" id="uname" name="uname" autocomplete="off" value=<%=customer.getUsername() %>></td>
+                <td><input type="text" id="uname" name="uname" autocomplete="off" value="<%=username%>"></td>
             </tr>
             <tr>
                 <td><label for="Icno" style="font-size: 14pt">Identity Card number:</label></td>
-                <td><input type="text" id="Icno" name="Icno" autocomplete="off" readonly value=<%=customer.getIcnum() %>></td>
+                <td><input type="text" id="Icno" name="Icno" autocomplete="off" readonly value="<%=customer.getIcnum()%>"></td>
             </tr>
             <tr>
                 <td><label for="email" style="font-size: 14pt">E-mail:</label></td>
-                <td><input type="text" id="email" name="email" autocomplete="off" value=<%=customer.getEmail() %>></td>
+                <td><input type="text" id="email" name="email" autocomplete="off" value="<%=customer.getEmail() %>"></td>
             </tr>
             <tr>
                 <td><label for="phonenum" style="font-size: 14pt">Phone Number:</label></td>
-                <td><input type="text" id="phonenum" name="phonenum" autocomplete="off" value=<%=customer.getPhoneNum() %>></td>
+                <td><input type="text" id="phonenum" name="phonenum" autocomplete="off" value="<%=customer.getPhoneNum() %>"></td>
             </tr>
 
             <tr>
@@ -145,4 +146,18 @@
         });
     });
 </script>
+<%int update=(int)session.getAttribute("updateSuccess"); %>
+
+<% 
+if (update == 1) {
+%>
+<script>
+  alert("Successfully update!");
+</script>
+<% } else if (update == 2) { %>
+<script>
+  alert("Failed to update!");
+</script>
+<% } %>
+<%session.setAttribute("updateSuccess",0); %>
 </html>

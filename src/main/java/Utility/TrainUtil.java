@@ -39,7 +39,7 @@ public class TrainUtil {
 
 			// Add the user details to the ServletContext with key as role name
 			request.getServletContext().setAttribute(userRole.toString(), user);
-
+			request.getSession().setAttribute("updateSuccess", 0);
 			// Store the userName and email in the http session
 			request.getSession().setAttribute("uName", user.getUsername());
 			request.getSession().setAttribute("mailid", user.getEmail());

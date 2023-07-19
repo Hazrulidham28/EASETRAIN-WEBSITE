@@ -54,16 +54,16 @@ public class userRegisterServlet extends HttpServlet {
 		
 			if("SUCCESS".equalsIgnoreCase(message)) {
 				
-				RequestDispatcher rd = request.getRequestDispatcher("StartUp.html");
+				RequestDispatcher rd = request.getRequestDispatcher("index.html");
 				rd.include(request, response);
 				
 				pw.println("<div class='tab'><p1 class='menu'>Successfully Registered !</p1></div>");
 			}
 			else {
-				RequestDispatcher rd = request.getRequestDispatcher("StartUp.html");
+				RequestDispatcher rd = request.getRequestDispatcher("index.html");
 				rd.include(request, response);
 				
-				pw.println("<div class='tab'><p1 class='menu'>"+message+" !</p1></div>");
+				
 				
 			}
 		}catch (Exception e) {

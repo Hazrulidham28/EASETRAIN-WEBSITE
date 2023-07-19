@@ -36,7 +36,8 @@ public class userUpdateAcc extends HttpServlet {
 			String icnumber=request.getParameter("Icno");
 			String email=request.getParameter("email");
 			String phoneNo=request.getParameter("phonenum");
-		
+			
+			//check value in var
 			System.out.println(username);
 			
 			
@@ -56,18 +57,24 @@ public class userUpdateAcc extends HttpServlet {
 				
 				if("SUCCESS".equalsIgnoreCase(message)) {
 					
+					request.getSession().setAttribute("updateSuccess", 1);
+					
+					//update current customer in servlet context
 					sct.setAttribute(userRole.CUSTOMER.toString(), cust);
+					//remove old current customer data
 					sct.removeAttribute("currentCustomer");
 					response.sendRedirect("userViewAccount");
-					//RequestDispatcher rd = request.getRequestDispatcher("userViewAccount");
-					//rd.include(request, response);
+					
 					
 					//add session for prompt
 				}
 				else {
+					//set value to 2 if failed
+					request.getSession().setAttribute("updateSuccess", 2);
 					System.out.println("failed");
-					RequestDispatcher rd = request.getRequestDispatcher("Home.html");
-					rd.include(request, response);
+					//failed go to home
+					//need to update condition for prompt in accDetails.jsp
+					response.sendRedirect("userViewAccount");
 					
 					
 					

@@ -30,7 +30,7 @@
         </span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="userloginServlet" method = "post">
+            <form action="userloginServlet" method = "post" >
                 <div class="input-box">
                     <span class="icon">
                     <ion-icon name="mail"></ion-icon>
@@ -58,7 +58,7 @@
 
         <div class="form-box register">
             <h2>Registration</h2>
-            <form action="userRegisterServlet" method = "post">
+            <form action="userRegisterServlet" method = "post" onsubmit="showAlert()">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person-circle-outline"></ion-icon>
@@ -110,6 +110,11 @@
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+    <script>
+  	function showAlert() {
+    alert("Registration successful!");
+  	}
+	</script>
+	
 </body>
 </html>

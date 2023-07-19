@@ -29,7 +29,7 @@
         </div>
         <ul>
             <li>
-                <a href="#">
+                <a href="userViewAccount">
                     <i class="bx bx-id-card"></i>
                     <span class="nav-item">Profile</span>
                 </a>
