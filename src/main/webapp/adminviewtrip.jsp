@@ -36,7 +36,7 @@
                 <span class="tooltip">View</span>
             </li>
             <li>
-                <a href="userviewtrain">
+                <a href="adminaddtrain">
                     <i class="bx bxs-shopping-bag"></i>
                     <span class="nav-item">Add Train</span>
                 </a>

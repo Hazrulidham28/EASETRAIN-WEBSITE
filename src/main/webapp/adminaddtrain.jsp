@@ -105,7 +105,7 @@
                 <span class="tooltip">Delete</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminLogoutServlet">
                     <i class="bx bx-log-out"></i>
                     <span class="nav-item">LogOut</span>
                 </a>
