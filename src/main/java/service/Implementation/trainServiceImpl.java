@@ -33,9 +33,9 @@ public class trainServiceImpl implements trainService{
 			ps.setString(7, train.getDuration());
 			ps.setString(8, train.getType());
 			ps.setDouble(9, train.getFare());
-			//need to change to execute();
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			//need to change to update
+			int i= ps.executeUpdate();
+			if (i>0) {
 				//if rs is exists set response code to success
 				responseCode = ResponseCode.SUCCESS.toString();
 			}

@@ -77,14 +77,14 @@
         
         <ul>
             <li>
-                <a href="#">
+                <a href="adminviewtrain">
                     <i class='bx bx-file-find' ></i>
                     <span class="nav-item">ViewTrain</span>
                 </a>
                 <span class="tooltip">View</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminaddtrain.jsp">
                     <i class='bx bx-add-to-queue' ></i>
                     <span class="nav-item">AddTrain</span>
                 </a>
@@ -123,7 +123,7 @@
             </header>
         </div>
         
-        <form action="" method="POST" onsubmit="return confirm('Are you sure you want to add this train?');">
+        <form action="adminAddTrainServlet" method="POST" onsubmit="return confirm('Are you sure you want to add this train?');">
     <div class="container1">
         <h2>Add Train's Ticket</h2>
         <table>
