@@ -15,7 +15,8 @@ The scope of this report encompasses the key features and functionality of the T
 
 
 2.0 Run Program
-Password : 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
+
+Token : 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
 
 [ERD]
 
