@@ -91,7 +91,7 @@
                 <span class="tooltip">Add</span>
             </li>
             <li>
-                <a href="#">
+                <a href="adminUpdateTrainServlet">
                     <i class='bx bxs-edit' ></i>
                     <span class="nav-item">UpdateTrain</span>
                 </a>
