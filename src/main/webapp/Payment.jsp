@@ -17,7 +17,7 @@
             <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="user">
-            <img src="https://drive.google.com/uc?export=view&id=19qPXXg7Q2ua0oHZEaEG0PXnMg0C704Hy" alt="customer" class="user-img">
+            <img src="https://drive.google.com/uc?export=view&id=1ZfUQaSE0rfmcv53bGHHDXFp6m71A6m5c" alt="customer" class="user-img">
             <div>
                 <p class="bold"><%=session.getAttribute("uName") %></p>
             </div>
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <input class="submit" type="submit" value="Proceed"> 
+                    <input class="submit" type="submit" value="Proceed" onclick="return confirm('Confirm your payment!');"> 
                 </form>
             </div>
         </div>
@@ -137,5 +137,13 @@
             sidebar.classList.toggle('active');
         };
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        $(".floatNumberField").change(function() {
+	            $(this).val(parseFloat($(this).val()).toFixed(2));
+	        });
+	    });
+	</script>     
 </body>
 </html>

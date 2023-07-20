@@ -89,14 +89,14 @@
                 <h2 class="logo">TrainEase</h2>
                 <nav class="navigation">
                     <a href="Home.html">Home</a>
-                    <a href="#">About us</a>
+                    <a href="aboutUs.html">About us</a>
                     <a href="#">Service</a>
-                    <a href="#">Contact</a>
+                    <a href="Contact.html">Contact</a>
                 </nav>
             </header>
         </div>
         
-        <form action="userUpdateAcc" method="POST" onsubmit="return confirm('Confirm your details>');">
+        <form action="userUpdateAcc" method="POST" onsubmit="return confirm('Confirm your details!');">
     <div class="container1">
         <h2>Manage your profile</h2>
         <table>
