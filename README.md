@@ -7,7 +7,11 @@ The Train Booking System is a comprehensive web application designed to fulfill 
 The scope of this report encompasses the key features and functionality of the Train Booking System. Users are provided with a range of options to choose their desired ticket, including origin and destination stations, departure and arrival times, trip duration, and fare information. The system offers seat selection with preferences such as window or aisle and displays real-time availability to enable informed decisions. Once users have made their selection, they can securely book the tickets through multiple payment methods. The system also maintains a comprehensive record of ticket purchases, allowing for convenient tracking of active tickets. Real-time updates ensure accurate information on seat availability and ticket details throughout the booking process, providing users with an efficient and reliable platform for their train reservations.
 
 1.3 Class Diagram
+
 ![image](https://github.com/Hazrulidham28/EASETRAIN-WEBSITE/assets/96154175/8d4a5cd9-21bf-4ff1-bf39-c56034f95cd1)
+
+
+
 
 
 2.0 Run Program
