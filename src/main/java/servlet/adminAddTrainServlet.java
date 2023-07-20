@@ -27,7 +27,7 @@ public class adminAddTrainServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//call attribure from jsp formss
+		//call attribure from jsp formss1
 		String trNum=request.getParameter("train_no");
 	    String fromStn=request.getParameter("departure_station");
 		String toStn=request.getParameter("arrival_station");
