@@ -34,7 +34,7 @@ public class adminUpdateTrain extends HttpServlet {
 		try {
 		//get train by using train number at trainservice
 		trainBean trainupdate=trainservice.getTrainById(trno);
-		
+		//test data to console
 		System.out.println(trainupdate.getFromStn());
 		
 		sct.setAttribute("updateTrain" ,trainupdate);
