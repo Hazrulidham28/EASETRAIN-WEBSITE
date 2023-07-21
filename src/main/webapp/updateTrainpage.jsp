@@ -172,7 +172,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="form">
-                    <input type="submit" class="submit-btn" value="Add">
+                    <input type="submit" class="submit-btn" value="Update">
                     <input type="reset" class="reset-btn" value="Clear">
                 </td>
             </tr>
