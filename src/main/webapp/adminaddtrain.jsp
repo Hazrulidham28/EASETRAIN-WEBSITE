@@ -69,9 +69,9 @@
         </div>
         
         <div class="user">
-        	<img src="https://drive.google.com/uc?export=view&id=1ZfUQaSE0rfmcv53bGHHDXFp6m71A6m5c" alt="customer" class="user-img">
+        	<img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
             <div>
-                <p class="bold">Admin</p>
+                <p class="bold"><%=session.getAttribute("uName")%></p>
             </div>
         </div>
         
@@ -119,7 +119,8 @@
     
         <div class="container">
             <header>
-                <h2 class = "logo">TrainEase - Administration</h2>
+                <h2 class = "logo">TrainEase</h2>
+                <h2>Administration</h2>
             </header>
         </div>
         
@@ -151,9 +152,9 @@
                 <td><label for="type">Type:</label></td>
                 <td>
                 	<select name="type" id="type" required>
-                		<option value="silver">Silver</option>
-                		<option value="gold">Gold</option>
-                		<option value="platinum">Platinum</option>
+                		<option value="Silver">Silver</option>
+                		<option value="Gold">Gold</option>
+                		<option value="Platinum">Platinum</option>
                 	</select>
                 </td>
             </tr>

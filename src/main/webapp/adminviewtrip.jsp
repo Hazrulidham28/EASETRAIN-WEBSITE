@@ -30,29 +30,29 @@
         <ul>
             <li>
                 <a href="adminviewtrain">
-                    <i class="bx bx-id-card"></i>
-                    <span class="nav-item">View Train</span>
+                    <i class='bx bx-file-find' ></i>
+                    <span class="nav-item">ViewTrain</span>
                 </a>
                 <span class="tooltip">View</span>
             </li>
             <li>
                 <a href="adminaddtrain.jsp">
-                    <i class="bx bxs-shopping-bag"></i>
-                    <span class="nav-item">Add Train</span>
+                    <i class='bx bx-add-to-queue' ></i>
+                    <span class="nav-item">AddTrain</span>
                 </a>
                 <span class="tooltip">Add</span>
             </li>
             <li>
                 <a href="adminUpdateTrainServlet">
-                    <i class="bx bxs-food-menu"></i>
-                    <span class="nav-item">Update Train</span>
+                    <i class='bx bxs-edit' ></i>
+                    <span class="nav-item">UpdateTrain</span>
                 </a>
                 <span class="tooltip">Update</span>
             </li>
              <li>
                 <a href="adminDeleteTrainServlet">
-                    <i class="bx bxs-food-menu"></i>
-                    <span class="nav-item">Delete Train</span>
+                    <i class='bx bxs-trash' ></i>
+                    <span class="nav-item">DeleteTrain</span>
                 </a>
                 <span class="tooltip">Delete</span>
             </li>
@@ -70,12 +70,7 @@
         <div class="container">
             <header>
                 <h2 class="logo">TrainEase</h2>
-                <nav class="navigation">
-                    <a href="#">Home</a>
-                    <a href="#">About us</a>
-                    <a href="#">Service</a>
-                    <a href="#">Contact</a>
-                </nav>
+                <h2>Administration</h2>
             </header>
         </div>
         

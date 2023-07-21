@@ -17,7 +17,7 @@
             <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="user">
-            <img src="https://drive.google.com/uc?export=view&id=1ZfUQaSE0rfmcv53bGHHDXFp6m71A6m5c" alt="customer" class="user-img">
+            <img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
             <div>
                 <p class="bold"><%=session.getAttribute("uName") %></p>
             </div>

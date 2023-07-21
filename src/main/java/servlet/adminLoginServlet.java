@@ -49,8 +49,9 @@ public class adminLoginServlet extends HttpServlet {
 				//check if user has authenticate
 				if(ResponseCode.SUCCESS.toString().equalsIgnoreCase(msg)) {
 					//redirect to page homepage.html
-					RequestDispatcher rd = request.getRequestDispatcher("AdminHome.html");
-					rd.include(request, response);
+					//RequestDispatcher rd = request.getRequestDispatcher("adminviewtrain");
+					//rd.include(request, response);
+					response.sendRedirect("adminviewtrain");
 					//print div class to inform that login is successfull
 					pw.println("<div class='div' style='color: white;'><p class='menu'>Successfully Login !</p></div>");
 					

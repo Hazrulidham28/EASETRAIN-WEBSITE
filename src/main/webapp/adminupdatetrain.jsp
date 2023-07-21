@@ -22,9 +22,9 @@
         </div>
         
         <div class="user">
-        	<img src="https://drive.google.com/uc?export=view&id=1ZfUQaSE0rfmcv53bGHHDXFp6m71A6m5c" alt="customer" class="user-img">
+        	<img src="https://drive.google.com/uc?export=view&id=15U6MiCsN2LLipUjcOmvo4BWET61Cbr7H" alt="customer" class="user-img">
             <div>
-                <p class="bold">Admin</p>
+                <p class="bold"><%=session.getAttribute("uName")%></p>
             </div>
         </div>
         
@@ -72,12 +72,8 @@
         <div class="container">
             <header>
                 <h2 class="logo">TrainEase</h2>
-                <nav class="navigation">
-                    <a href="Home.html">Home</a>
-                    <a href="#">About us</a>
-                    <a href="#">Service</a>
-                    <a href="#">Contact</a>
-                </nav>
+                <h2>Administration</h2>
+                
             </header>
         </div>
         <form action = "adminUpdateTrain" method = "post" onsubmit="return confirm('Are you sure you want to update this train?');">

@@ -100,13 +100,13 @@
     <div class="container1">
         <h2>Manage your profile</h2>
         <table>
+        	<tr>
+                <td><label for="Icno" style="font-size: 14pt">Identity Card number:</label></td>
+                <td><input type="text" id="Icno" name="Icno" autocomplete="off" readonly value="<%=customer.getIcnum()%>"></td>
+            </tr>
             <tr>
                 <td style="width: 20%"><label for="uname" style="font-size: 14pt">Name:</label>
                 <td><input type="text" id="uname" name="uname" autocomplete="off" value="<%=username%>"></td>
-            </tr>
-            <tr>
-                <td><label for="Icno" style="font-size: 14pt">Identity Card number:</label></td>
-                <td><input type="text" id="Icno" name="Icno" autocomplete="off" readonly value="<%=customer.getIcnum()%>"></td>
             </tr>
             <tr>
                 <td><label for="email" style="font-size: 14pt">E-mail:</label></td>
