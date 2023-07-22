@@ -123,7 +123,8 @@
                             </div>
                         </div>
                     </div>
-                    <input class="submit" type="submit" value="Proceed" onclick="return confirm('Confirm your payment!');"> 
+               		<input class="cancel" type="button" value="Cancel" onclick="cancelForm()">
+                    <input class="submit" type="submit" value="Pay" onclick="return confirm('Confirm your payment!');"> 
                 </form>
             </div>
         </div>

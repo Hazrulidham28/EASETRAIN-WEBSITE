@@ -317,19 +317,19 @@ header {
   color: var(--font-color-light);
 }
    .submit{
-		  position: relative;
-  padding: 12px 35px;
-  background: #FEC195;
-  font-size: 17px;
-  font-weight: 500;
-  color: #181818;
-  border: 3px solid #FEC195;
-  border-radius: 8px;
-  box-shadow: 0 0 0 #fec1958c;
-  transition: all .3s ease-in-out;
-  margin-top: 50px;
-  margin-left:30vw;
-  margin-bottom: 30px;
+	  position: relative;
+	  padding: 12px 35px;
+	  background: #FEC195;
+	  font-size: 17px;
+	  font-weight: 500;
+	  color: #181818;
+	  border: 3px solid #FEC195;
+	  border-radius: 8px;
+	  box-shadow: 0 0 0 #fec1958c;
+	  transition: all .3s ease-in-out;
+	  margin-top: 50px;
+	  margin-left:30vw;
+	  margin-bottom: 30px;
 	  }
 	  
 	.submit:hover{
@@ -337,3 +337,28 @@ header {
   color: #FEC195;
   box-shadow: 0 0 25px #fec1958c;		
 	}
+	
+	.cancel{
+	  position: relative;
+	  padding: 12px 35px;
+	  background: #FEC195;
+	  font-size: 17px;
+	  font-weight: 500;
+	  color: #181818;
+	  border: 3px solid #FEC195;
+	  border-radius: 8px;
+	  box-shadow: 0 0 0 #fec1958c;
+	  transition: all .3s ease-in-out;
+	  margin-top: 50px;
+	  margin-left:30vw;
+	  margin-bottom: 30px;
+	  }
+	  
+	.cancel:hover{
+  background: transparent;
+  color: #FEC195;
+  box-shadow: 0 0 25px #fec1958c;		
+	}
+	
+
+	
