@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Page</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="Payment.css">
+    <link rel="stylesheet" href="Payment1.css">
 </head>
 <body>
     <div class="sidebar">
@@ -71,11 +71,15 @@
                 <h1>Order Details</h1>
             </div>
             
-            <%
+           	<%
             customerBean customer=(customerBean) application.getAttribute("currCust");
             trainBean train=(trainBean) application.getAttribute("trainBook");
             
             %>
+             <%
+            String seat=(String) application.getAttribute("seat");
+            
+  %>
             <div id="passenger">
                 <p id="LittleTitle">Passenger Detail</p>
                 <p>Name: <%=customer.getUsername() %></p>
@@ -83,16 +87,17 @@
                 <p>Contact No:<%=customer.getPhoneNum() %></p>
             </div>
             <div id="ticketDetail">
-                <p><%=train.getFromStn() %>> <%=train.getToStn() %></p>
+                <p><%=train.getFromStn() %> > <%=train.getToStn() %></p>
                 <p><%=train.getType() %> - <%=train.getTrNo() %></p>
                 <p><%=train.getDate() %> / <%=train.getDepTime() %></p>
+                <p>Seat: <%=seat %></p>
             </div> 
             <div id="orderSummary">
                 <p id="LittleTitle">Order Summary</p>
                 <p>Total</p>
                 <p>MYR <%=train.getFare() %></p>
             </div>
-            <h1 class="paymentTitle">Payment Options</h1>
+            <h2 class="paymentTitle">Choose payment method:</h2>
             
             <div class="payment-container">
                 <!-- submit the payment option to the database -->
@@ -145,6 +150,14 @@
 	            $(this).val(parseFloat($(this).val()).toFixed(2));
 	        });
 	    });
-	</script>     
+	</script> 
+<script>
+    function cancelForm() {
+      
+    	alert("Ticket canceled !");
+
+        window.location.href = "userviewtrain"; 
+    }
+  </script>	    
 </body>
 </html>
