@@ -39,6 +39,9 @@ public class adminDeleteTrain extends HttpServlet {
 					response.sendRedirect("adminviewtrain");
 					
 				}
+				else {
+					response.sendRedirect("AdminHome.html");
+				}
 			
 			
 			

@@ -48,7 +48,7 @@ public class adminDeleteTrainServlet extends HttpServlet {
 					
 					
 				}else{
-					RequestDispatcher rd = request.getRequestDispatcher("AccountTest.html");
+					RequestDispatcher rd = request.getRequestDispatcher("AdminHome.html");
 					rd.include(request, response);
 					
 				}
